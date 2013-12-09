@@ -124,7 +124,6 @@ var SampleApp = function() {
         self.setupVariables();
         self.populateCache();
         self.setupTerminationHandlers();
-        self.app.use(express.static(__dirname + '/public'));
         self.app.use(express.favicon());
         // Create the express server and routes.
         self.initializeServer();
