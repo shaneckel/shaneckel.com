@@ -95,6 +95,7 @@ var SampleApp = function() {
     self.createRoutes = function() {
         self.routes = { };
 
+
         self.routes['/'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('index.html') );
@@ -108,7 +109,16 @@ var SampleApp = function() {
      */
     self.initializeServer = function() {
         self.createRoutes();
-        self.app = express.createServer();
+        //self.app = express.createServer();
+        self.app = module.exports = express();
+
+        // self.app.set('views', __dirname + '/views');
+        // self.app.set('view engine', 'jade');
+        // self.app.use(self.app.router);
+        // self.app.use(express.bodyParser());
+        // self.app.use(express.methodOverride());
+        self.app.use(express.static(__dirname + '/public'));
+        self.app.use(express.favicon());
 
         //  Add handlers for the app (from the routes).
         for (var r in self.routes) {
@@ -124,7 +134,7 @@ var SampleApp = function() {
         self.setupVariables();
         self.populateCache();
         self.setupTerminationHandlers();
-        self.app.use(express.favicon());
+
         // Create the express server and routes.
         self.initializeServer();
     };
