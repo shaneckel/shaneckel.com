@@ -44,19 +44,19 @@ $phone: "only screen and (max-width: 767px)"; // phones
       }
 
       td > form, td{
+        @include box-sizing(border-box); 
         white-space: nowrap;
         line-height: 0;
         font-size: 0;
         color: transparent;
         width: 100%;
-        @include box-sizing(border-box); 
         text-align: center;
-
+        height: 50px;
         a{
           display: none;
 
           &:nth-child(1), &:nth-child(3), &:nth-child(4){
-            width: 30%;
+            width: 29%;
             height: 28px;
             display: inline-block;
             font-size: 10px;
@@ -66,8 +66,19 @@ $phone: "only screen and (max-width: 767px)"; // phones
             margin-top: 10px;
             border-radius: 6px;
             margin-bottom: 10px;
-            margin-left: 1%;
-            margin-right: 1%;
+            position: absolute;
+            left: 0;
+            // margin-left: 1%;
+            // margin-right: 1%;
+          }
+          &:nth-child(1){
+            left: 2%;
+          }          
+          &:nth-child(3){
+            left: 35%;
+          }          
+          &:nth-child(4){
+            left: 67%;
           }
         }
         br, input{
