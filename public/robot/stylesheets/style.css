@@ -1,0 +1,60 @@
+body { background-color: #808080; background-image: none; color: #030000; font-family: verdana; font-size:  10px; }
+form { margin: 0px; }
+.header { background-color: #000000; background-image: none; color: #FFFFFF; font-weight: bold; }
+
+a:link { text-decoration: underline; background-color: #808080; background-image; none; color: #030000; }
+a:visited { text-decoration: none; background-color: #808080; background-image: none; color: #030000; }
+a:hover { text-decoration: underline; background-color: #808080; background-image; none; color: #030000; }
+
+.mypostthread { border-top: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #DFC5C5; background-image: none; color: #000303; }
+
+a.tr1link { text-decoration: none; background-color: #BFBFBF; background-image: none; color: #640000; }
+a.tr1link:visited { text-decoration: underline; background-color: #BFBFBF; background-image: none; color: #640000; }
+a.tr1link:hover { text-decoration: none; background-color: #BFBFBF; background-image: none; color: #030000; }
+
+a.tr2link { text-decoration: underline; background-color: #CECECE; background-image: none; color: #6b0000; }
+a.tr2link:hover { text-decoration: underline: background-color: #CECECE; background-image: none; color: #v030000; }
+a.tr2link:visited { text-decoration: underline; background-color: #CECECE; background-image: none; color: #030000; }
+
+.tr2thread { border-top: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #CECECE; background-image: none; color: #030000; }
+
+.mypost { background-color: #DFC5C5; background-image: none; color: #000303; }
+a.mypost { background-color: #DFC5C5; text-decoration: none; background-image: none; color: #000303; }
+a.mypost:visited { background-color: #DFC5C5; background-image: none; color: #007474; }
+a.mypost:hover { background-color: #DFC5C5; background-image: none; color: #007474; }
+
+.button { font-family: verdana; color: #030000; border: 1px solid #000000; background-color: #CECECE; background-image: none; font-size: 10px;}
+.textfield { font-family: verdana; color: #030000; border: 1px solid #000000; background-color: #CECECE; background-image: none; font-size: 10px;}
+
+.tr1 { background-color: #BFBFBF; background-image: none; color: #030000; }
+a.tr1 { background-color: #BFBFBF; text-decoration: none; background-image: none; color: #030000; }
+a.tr1:visited { background-color: #BFBFBF; background-image: none; color: #640000; }
+a.tr1:hover { background-color: #BFBFBF; background-image: none; color: #030000; }
+
+.tr3 { background-color: #FFFFFF; text-decoration: none; background-image: none; color: #030000; }
+a.tr3 { background-color: #FFFFFF; text-decoration: none; background-image: none; color: #030000; }
+a.tr3:visited { background-color: #FFFFFF; text-decoration: underline; background-image: none; color: #830000; }
+a.tr3:hover { background-color: #FFFFFF; text-decoration: underline; background-image: none; color: #030000; }
+
+.tr2 { background-color: #CECECE; background-image: none; color: #030000; }
+a.tr2 { background-color: #CECECE; text-decoration: none; background-image: none; color: #030000; }
+a.tr2:visited { background-color: #CECECE; background-image: none; color: #6b0000; }
+a.tr2:hover { background-color: #CECECE; background-image: none; color: #030000; }
+
+.bigtable { border: 1px solid #000000; }
+
+a.menu { font-weight: bold; }
+a.menu:link { font-weight: bold; background-color: #808080; background-image: none; color: #030000; text-decoration: none; }
+.menu:visited { font-weight: bold; background-color: #808080; background-image: none; color: #030000; text-decoration: none; }
+a.menu:hover { font-weight: bold; background-color: #808080; background-image: none; color: #030000; text-decoration: none; }
+
+.replytbl {border: none; }
+
+.footer { background-color: #000000; background-image: none; color: #FFFFFF; font-weight: bold; }
+a.footer { background-color: #000000; background-image: none; color: #FFFFFF; font-weight: bold; }
+a.footer:visited { background-color: #000000; background-image: none; color: #FFFFFF; font-weight: bold; }
+a.footer:hover { background-color: #000000; background-image: none; color: #FFFFFF; font-weight: bold; }
+
+.lastpostby { font-size: :04 PM 3/20/2009; }
+.newmessage { background-color: #808080; background-image: none; color: #030000; font-family: Helvetica, arial, helvetica, sans-serif; }
+.mono { font-family: monospace; font-size: 12px; }
