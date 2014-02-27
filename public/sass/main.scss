@@ -9,7 +9,8 @@ body{
   background: rgba(107, 14, 14, 0.84);  
 }
 #partytime{
-  margin: 10%;
+  margin: 5%;
+  text-align: center;
 }
 p, h1{
   font-family: 'Whitney A', 'Whitney B';
@@ -22,13 +23,16 @@ h1{
   font-style: normal; 
   text-shadow: 1px 0px 5px rgba(31, 31, 31, 0.16);
 }
+img{
+  max-width: 100%;
+}
 p{
   font-size: 1.1em;
   font-weight: 300;
-  margin-top: 3%;
+  margin-top: 5%;
   font-style: normal;
   color: #A37070;
-
+  margin-bottom: 10%;
   span{
     margin-right: 5px;
     font-weight: 400;
