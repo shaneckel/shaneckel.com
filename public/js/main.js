@@ -1,6 +1,0 @@
-
-//Party. 
-
-$(function(){
-	Party.start();
-})
