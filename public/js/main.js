@@ -1,0 +1,6 @@
+
+//Party. 
+
+$(function(){
+	Party.start();
+})

@@ -1,0 +1,56 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+body{
+  background: rgba(107, 14, 14, 0.84);  
+}
+#partytime{
+  margin: 5%;
+  text-align: center;
+}
+p, h1{
+  font-family: 'Whitney A', 'Whitney B';
+  font-weight: 700; 
+}
+h1{
+  font-size: 4em;
+  color: rgba(173, 80, 80, 1);
+  font-weight: 800;
+  font-style: normal; 
+  text-shadow: 1px 0px 5px rgba(31, 31, 31, 0.16);
+}
+img{
+  max-width: 100%;
+}
+p{
+  font-size: 1.1em;
+  font-weight: 300;
+  margin-top: 2%;
+  font-style: normal;
+  color: #A37070;
+  margin-bottom: 10%;
+  border-top: 1px solid;
+  padding-top: 2%;
+  span{
+    margin-right: 5px;
+    font-weight: 400;
+    color: rgb(213, 149, 149);
+  }
+  &:first-child{
+    border-bottom: 1px solid #a37070;
+    padding-bottom: 4px;
+  } 
+}
+.lank{
+  display: inline-block;
+  margin: 1%;
+  a{
+    font-weight: 400;
+
+  }
+}
+
