@@ -1,0 +1,38 @@
+doctype 5
+html(lang="en")
+  head
+    meta(charset='utf-8')
+   
+    title Admin Section
+   
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='Shane Eckel is a designer and developer located in Pittsburgh, Pa.')
+    meta(name='author', content='Shane Eckel')
+   
+    link(rel='stylesheet', type='text/css', href='//cloud.typography.com/6038632/763602/css/fonts.css')
+    link(href='/css/main.css', rel='stylesheet')
+    
+    script(src="js/jquery.js")
+    script(src="js/angular.js")
+    script(src="js/todo.js")
+  
+  body(ng-app="scotchTodo")
+    a(href="/logout") logout
+    h1 connect and validate
+    p #{user.username}
+    hr
+    h1
+
+    div(ng-controller="mainController")
+      h1 length :  
+        span {{ todos.length }}
+ 
+      div.checkbox(ng-repeat="todo in todos")
+        label
+          input(type="checkbox", ng-click="deleteTodo(todo._id)")
+          | test {{todo.text }}
+      
+      div#todo-form
+        form
+          input(type="text" placeholder="todo" ng-model="formData.text")
+          button(type="submit" ng-click="createTodo()") add
