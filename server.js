@@ -34,25 +34,23 @@ app.configure(function () {
   });
 });
 
-  mongoConnection = config.mongoUser + ":" +
-    config.mongoPass + "@" +
-    config.mongoHost + ':' +
-    config.mongoPort + '/' +
-    config.appname;
+mongoConnection = config.mongoUser + ":" +
+  config.mongoPass + "@" +
+  config.mongoHost + ':' +
+  config.mongoPort + '/' +
+  config.appname;
 
-  mongoose.connect(mongoConnection);
+mongoose.connect(mongoConnection);
 
-  var database = mongoose.connection;
- 
-  database.on('error', function(error){
-    var date = new Date();
-    console.error(date.toUTCString() + " Connection error: " + error);
-  });
+mongoose.connection.on('error', function(error){
+  var date = new Date();
+  console.error(date.toUTCString() + " Connection error: " + error);
+});
 
-  database.on('disconnected', function(param){
-    var date = new Date();
-    console.error(date.toUTCString() + " Connection disconnected: " + param);
-  });
+mongoose.connection.on('disconnected', function(param){
+  var date = new Date();
+  console.error(date.toUTCString() + " Connection disconnected: " + param);
+});
 
 require('./routes.js')(app, passport);
 

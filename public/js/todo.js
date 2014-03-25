@@ -1,40 +1,43 @@
-var scotchTodo = angular.module('scotchTodo', []);
+angular.module('scotchTodo', ['todoController', 'todoService']);
 
-function mainController($scope, $http) {
-  $scope.formData = {};
-  console.log("buing");
-    console.log( $scope.formData);
 
-  // when landing on the page, get all todos and show them
-  $http.get('/api/todos')
-    .success(function(data) {
-      $scope.todos = data;
-    })
-    .error(function(data) {
-      console.log('Error: ' + data);
-    });
+angular.module('todoService', [])
+  .factory('Todos', function($http) {
+    return {
+      get : function() {
+        return $http.get('/api/todos');
+      },
+      create : function(todoData) {
+        return $http.post('/api/todos', todoData);
+      },
+      delete : function(id) {
+        return $http.delete('/api/todos/' + id);
+      }
+    }
+  });
 
-  // when submitting the add form, send the text to the node API
-  $scope.createTodo = function() {
-    console.log("create1");
-    $http.post('/api/todos', $scope.formData)
-      .success(function(data) {
-        $('input').val('');
-        $scope.todos = data;
-      })
-      .error(function(data) {
-        console.log('Error: ' + data);
-      });
-  };
-
-  // delete a todo after checking it
-  $scope.deleteTodo = function(id) {
-    $http.delete('/api/todos/' + id)
+angular.module('todoController', [])
+  .controller('mainController', function($scope, $http, Todos) {
+    $scope.formData = {};
+     Todos.get()
       .success(function(data) {
         $scope.todos = data;
-      })
-      .error(function(data) {
-        console.log('Error: ' + data);
       });
-  };
-}
+    
+    $scope.createTodo = function() {
+      
+        Todos.create($scope.formData)
+          .success(function(data) {
+            $scope.formData = {}; 
+            $scope.todos = data; 
+          });
+    };
+
+    $scope.deleteTodo = function(id) {
+      Todos.delete(id)
+        .success(function(data) {
+          $scope.todos = data; 
+        });
+    };
+
+  });

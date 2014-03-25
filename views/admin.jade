@@ -12,7 +12,6 @@ html(lang="en")
     link(rel='stylesheet', type='text/css', href='//cloud.typography.com/6038632/763602/css/fonts.css')
     link(href='/css/main.css', rel='stylesheet')
     
-    script(src="js/jquery.js")
     script(src="js/angular.js")
     script(src="js/todo.js")
   
@@ -30,7 +29,7 @@ html(lang="en")
       div.checkbox(ng-repeat="todo in todos")
         label
           input(type="checkbox", ng-click="deleteTodo(todo._id)")
-          | test {{todo.text }}
+          | {{todo.text }}
       
       div#todo-form
         form
