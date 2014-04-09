@@ -12,7 +12,7 @@ var config          = require('./config'),
 
 var app             = express();
 
-var configDB        = require('./database');
+//var configDB        = require('./database');
  
 require('./passport.js')(passport); // pass passport for configuration
 
@@ -21,7 +21,8 @@ app.configure(function () {
   app.set('view engine', 'jade');    
   app.use(express.static(path.join(__dirname + '/public')));
   app.use(express.cookieParser());
-  app.use(express.bodyParser());
+  app.use(express.json());
+  app.use(express.urlencoded());
   app.use(express.session({ secret: 'keyboard cat' }));
   app.use(flash());
   app.use(passport.initialize());

@@ -27,10 +27,10 @@ html(lang="en")
         span {{ todos.length }}
  
       div.checkbox(ng-repeat="todo in todos")
-        label
-          input(type="checkbox", ng-click="deleteTodo(todo._id)")
-          | {{todo.text }}
-      
+        button(type="checkbox", ng-click="doneTodo(todo._id)") done
+        p {{todo.text }}
+        button(type="checkbox", ng-click="deleteTodo(todo._id)") delete
+         
       div#todo-form
         form
           input(type="text" placeholder="todo" ng-model="formData.text")
