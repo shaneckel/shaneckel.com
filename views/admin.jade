@@ -15,23 +15,23 @@ html(lang="en")
     script(src="js/angular.js")
     script(src="js/todo.js")
   
-  body(ng-app="scotchTodo")
+  body#todos(ng-app="scotchTodo")
     a(href="/logout") logout
     h1 connect and validate
     p #{user.username}
-    hr
-    h1
-
-    div(ng-controller="mainController")
+ 
+    div.todo(ng-controller="mainController")
       h1 length :  
         span {{ todos.length }}
- 
-      div.checkbox(ng-repeat="todo in todos")
-        button(type="checkbox", ng-click="doneTodo(todo._id)") done
-        p {{todo.text }}
-        button(type="checkbox", ng-click="deleteTodo(todo._id)") delete
-         
+     
       div#todo-form
         form
           input(type="text" placeholder="todo" ng-model="formData.text")
           button(type="submit" ng-click="createTodo()") add
+
+      div.item(ng-repeat="todo in todos" ng-class="({{todo.done }}==true) ? 'done' : ''")
+        div.check(ng-click="updateTodo(todo._id, todo.done, todo.text )")
+          p {{todo.text }}
+        div.delete(ng-click="deleteTodo(todo._id)") X
+        
+           

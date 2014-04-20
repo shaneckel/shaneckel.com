@@ -10,6 +10,9 @@ angular.module('todoService', [])
       create : function(todoData) {
         return $http.post('/api/todos', todoData);
       },
+      update : function(id, todoData) {
+        return $http.post('/api/todos/' + id , todoData);
+      },
       delete : function(id) {
         return $http.delete('/api/todos/' + id);
       }
@@ -18,24 +21,44 @@ angular.module('todoService', [])
 
 angular.module('todoController', [])
   .controller('mainController', function($scope, $http, Todos) {
+    
     $scope.formData = {};
-     Todos.get()
+    
+    Todos.get()
       .success(function(data) {
         $scope.todos = data;
       });
     
     $scope.createTodo = function() {
-      
-        Todos.create($scope.formData)
-          .success(function(data) {
-            $scope.formData = {}; 
-            $scope.todos = data; 
-          });
+      Todos.create($scope.formData)
+        .success(function(data) {
+          $scope.formData = {}; 
+          $scope.todos = data; 
+        });
+    };
+    
+    $scope.updateTodo = function(id, done, text) {    
+ 
+      if(!done) done = true;
+      else done = false;
+
+      var todoData = {
+        "done" : done,
+        "text" : text
+      }
+
+      Todos.update(id, todoData)
+        .success(function(data) {
+          console.log(data);
+          $scope.formData = {}; 
+          $scope.todos = data; 
+        }) 
     };
 
     $scope.deleteTodo = function(id) {
       Todos.delete(id)
         .success(function(data) {
+          $scope.formData = {}; 
           $scope.todos = data; 
         });
     };

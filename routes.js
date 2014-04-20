@@ -48,21 +48,32 @@ module.exports = function(app, passport) {
         res.json(todos);
       });
     });
+  });  
 
+  app.post('/api/todos/:todo_id', ensureAuthenticated, function(req, res) {
+    Todo.update({_id : req.params.todo_id }, {$set: {done: req.body.done , text: req.body.text}}, {upsert: true}, 
+      function(err, todo){
+        if(err)
+          res.send(err);
+        Todo.find( function(err, todos) {
+          if (err)
+            res.send(err)
+          res.json(todos);
+        })
+      })
   });
-
+ 
   app.delete('/api/todos/:todo_id', ensureAuthenticated, function(req, res) {
-    Todo.remove({
-      _id : req.params.todo_id
-    }, function(err, todo) {
-      if (err)
-        res.send(err);
-      Todo.find(function(err, todos) {
+    Todo.remove({_id : req.params.todo_id}, 
+      function(err, todo) {
         if (err)
-          res.send(err)
-        res.json(todos);
+          res.send(err);
+        Todo.find(function(err, todos) {
+          if (err) 
+            res.send(err)
+          res.json(todos);
+        });
       });
-    });
   });
 
   function ensureAuthenticated(req, res, next) {
