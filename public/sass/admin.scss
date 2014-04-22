@@ -1,0 +1,32 @@
+
+#todos{
+  background: #728fa2;
+}
+
+.item{
+  @include display-flex();
+  border-top: 1px solid #333;
+  font-weight: 300;
+  font-size: 1.6em;
+  .check{
+    @include flex(16);
+    background: #7277a2;
+    display: inline-block;
+    padding: 1em;
+  }
+  .delete{
+    @include flex(1);
+    background: #e13345;
+    display: inline-block;
+    padding: 1em 0;
+    color: #f5bcc2;
+    text-align: center;
+    font-weight: 600;
+  }
+  &.done{
+    .check{
+      background: #3c3e4e;
+
+    }
+  }
+}
