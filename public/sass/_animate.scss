@@ -1,0 +1,37 @@
+.page.ng-leave  { z-index:99 ; }
+.page.ng-enter  { z-index:88; }
+
+.page.ng-leave        {
+  -webkit-animation:slideOutLeft 0.6s both cubic-bezier(0,.01,.32,.95);
+  -moz-animation:slideOutLeft 0.6s both cubic-bezier(0,.01,.32,.95);
+  animation:slideOutLeft 0.6s both cubic-bezier(0,.01,.32,.95);   
+}
+
+.page.ng-enter        {  
+  -webkit-animation:slideInRight 0.5s both cubic-bezier(0,.01,.32,.95);
+  -moz-animation:slideInRight 0.5s both cubic-bezier(0,.01,.32,.95);
+  animation:slideInRight 0.5s both cubic-bezier(0,.01,.32,.95);    
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(10%); opacity: 0; }
+  to { transform: translateX(0); opacity:1; }
+}
+@-moz-keyframes slideInRight {
+  from { -moz-transform:translateX(10%);  opacity: 0; }
+  to { -moz-transform: translateX(0) rotateZ(0deg); opacity:1; }
+}
+@-webkit-keyframes slideInRight {
+  from { -webkit-transform:translateX(10%);  opacity: 0;  }
+  to { -webkit-transform: translateX(0) rotateZ(0deg); opacity:1; }
+}
+ 
+@keyframes slideOutLeft {
+  to { transform: translateX(-10%) rotateZ(-8deg); opacity:0; }
+}
+@-moz-keyframes slideOutLeft {  
+  to { -moz-transform: translateX(-10%) rotateZ(-8deg); opacity:0;  }
+}
+@-webkit-keyframes slideOutLeft {
+  to { -webkit-transform: translateX(-10%) rotateZ(-8deg); opacity:0;  }
+}

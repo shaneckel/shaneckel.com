@@ -4,25 +4,24 @@ var Todo = require('./todo');
 
 module.exports = function(app, passport) {
 
-  app.get('/', function(req, res) {
-    res.render('index');
-  });
 
-  app.get("/admin", ensureAuthenticated, function(req, res){
+  //admin
+
+  app.get("/admin/admin", ensureAuthenticated, function(req, res){
     res.render('admin', { user: req.user});
   });
 
-  app.post('/login',
-    passport.authenticate('local', { failureRedirect: '/login', successRedirect: '/admin', failureFlash: true }),
+  app.post('/admin/login',
+    passport.authenticate('local', { failureRedirect: '/admin/login', successRedirect: '/admin/admin', failureFlash: true }),
     function(req, res) {
-      res.redirect('/');
+      res.redirect('/admin/admin');
     });
 
-  app.get("/login", checkAuthenticated, function(req, res){
+  app.get("/admin/login", checkAuthenticated, function(req, res){
     res.render('login', { message: req.flash('error')   });
   });
 
-  app.get('/logout', function(req, res){
+  app.get('/admin/logout', function(req, res){
     req.logout();
     res.redirect('/');
   });
@@ -76,14 +75,31 @@ module.exports = function(app, passport) {
       });
   });
 
+  //site
+
+  app.get('/', function(req, res) {
+    res.render('index');
+  });
+ 
+  app.get('/templ/:name',  function (req, res) {
+    var name = req.params.name;
+     res.render('templ/' + name);
+  }); 
+
+  //site catch-all
+
+  app.get('*', function(req, res) {
+    res.render('index');
+  });
+ 
   function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) { return next(); }
-    res.redirect('/login');
+    res.redirect('/admin/login');
   }  
 
   function checkAuthenticated(req, res, next) {
     if (!req.isAuthenticated()) { return next(); }
-    res.redirect('/admin');
+    res.redirect('/admin/admin');
   }
 
 }

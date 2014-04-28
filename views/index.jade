@@ -1,14 +1,13 @@
 doctype 5
 html(lang="en")
   head
-    meta(charset='utf-8')
-   
-    title Shane Eckel. Web developer with an art degree. 
-   
-    <!--Snoopin around huh... It's all really straight forward.-->
-    <!--Truly wish I had more to focus on this. Feel free to take any bits you like-->
-    <!--We all learn from our community. blah blah picasso quote. :) -->
 
+    //- shaneckel.com 
+    //- "Good artists copy, great artists steal."
+   
+    title Shane Eckel. Pittsburgh, Pa. Creative.
+    
+    meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(name='description', content='Shane Eckel is a designer and developer located in Pittsburgh, Pa.')
     meta(name='author', content='Shane Eckel')
@@ -16,23 +15,28 @@ html(lang="en")
     link(rel='stylesheet', type='text/css', href='//cloud.typography.com/6038632/763602/css/fonts.css')
     link(href='/css/main.css', rel='stylesheet')
 
-  body
-    section.fold
+  body(ng-app="funtime", ng-class="{loading: loading}", id="init")
 
-      header
-        h1 I’m Shane.
-        p The designer that is 
-          span heavily 
-          | under the influence of digital technology.
-      //- main
-      //-   p having a good time. 
+    main(ng-class="{navflip:navflip}" ng-init="navflip=false")
+      div.navflipper(ng-class="{navflip:navflip}", ng-click="navflip=!navflip")
 
-    section.direction
-      p twitter
-    footer
-      p Annnnnd you're down here now. 
+      nav
+        p
+          a(href="/", class="nav", ng-class="{active: location.path() === '/'}")  index
+        
+        //- leave the creative out until more time.
 
-      
+        //- p
+        //-   a(href="/creative", class="nav", ng-class="{active: location.path() === '/creative'}") creative
+        p
+          a(href="/experience", class="nav", ng-class="{active: location.path() === '/experience'}") experience
+        p
+          a(href="/information", class="nav", ng-class="{active: location.path() === '/information'}") information
+
+      article(ng-view class="page {{ pageClass }}")
+ 
+    script(src='/js/funtime.js')
+ 
     script.
       type="text/javascript"
       var _gaq = _gaq || [];
@@ -44,5 +48,3 @@ html(lang="en")
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-
-

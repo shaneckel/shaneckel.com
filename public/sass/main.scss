@@ -3,8 +3,9 @@
 @import "compass/css3";
 @import "flexbox";
 
-$desk: "only screen and (min-width: 768px)"; // tablets and desktop
+$desk: "only screen and (min-width: 768px)";  // tablets and desktop
 $phone: "only screen and (max-width: 767px)"; // phones
+$fontc: #e5e7ec;
 
 *, *:before, *:after{
   box-sizing: border-box;
@@ -13,29 +14,322 @@ $phone: "only screen and (max-width: 767px)"; // phones
 body{
   background-color: #49628a;
   font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B';
-}
-
-.fold{
-  color: #e5e7ec;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   background-size: 100% auto;
-  background-size: cover;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
   @media #{$desk} {
     background-image: url(../img/main-l.jpg);
   }
   @media #{$phone} {
     background-image: url(../img/main-s.jpg);
   }
-  padding: 20% 16em 20% 12em;
+  a{
+    text-decoration: none; 
+    color: #e8f0ea; 
+  }
 }
 
-.fold header{
+main{
+  position: relative;
+  nav{
+    width: 0em;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0,.01,.32,.95);
+    -webkit-transition: all 0.3s cubic-bezier(0,.01,.32,.95);
+    -moz-transition: all 0.3s cubic-bezier(0,.01,.32,.95);
+    -webkit-transform: rotateZ(8deg) translateX(-4em);
+    -moz-transform: rotateZ(8deg) translateX(-4em);
+     transform: rotateZ(8deg) translateX(-4em);
+  }
+  article.page{
+    margin-left: 0em; 
+    transition: all 0.3s cubic-bezier(0,.01,.32,.95);
+    -webkit-transition: all 0.3s cubic-bezier(0,.01,.32,.95);
+    -moz-transition: all 0.3s cubic-bezier(0,.01,.32,.95);
+  }
+}
+
+main.navflip{
+  nav{
+    width: 12em; 
+    border-right: 1px solid rgb(226, 106, 106);
+    -webkit-transform: rotateZ(0) translateX(0);
+    -moz-transform: rotateZ(0) translateX(0);
+    transform: rotateZ(0) translateX(0);
+  }
+  article.page{
+    margin-left: 4em; 
+  }
+}
+
+article.page{
+  position:absolute; 
+  top:0;  
+  width:100%; 
+  z-index: 66;
+  left:0; 
+}
+
+.navflipper{
+  cursor: pointer;
+  position: fixed; 
+  z-index: 10002;
+  font-weight: 300; 
+  font-size: 1.8em;
+  left: 1em; 
+  color: #bfd6c5;
+  top: 1em;
+  padding: 10px;
+  transition: all 0.1s cubic-bezier(0,.01,.32,.95);
+  -webkit-transition: all 0.1s cubic-bezier(0,.01,.32,.95);
+  -moz-transition: all 0.1s cubic-bezier(0,.01,.32,.95);
+  @media #{$phone} {
+    top: 3.2em;
+    left: 0;
+  }
+  &:before{
+    content:"☰";
+  }  
+  &:hover{
+    color: rgb(226, 106, 106);
+    -webkit-transform: scale(1.2) ;
+    -moz-transform: scale(1.2) ;
+     transform: scale(1.2) ;
+  }
+  &.navflip{
+    -webkit-transform: scale(3) rotateZ(45deg);
+    -moz-transform: scale(3) rotateZ(45deg) ;
+    transform: scale(3) rotateZ(45deg) ;
+    @media #{$phone} {
+      top: 3em;
+      left: 1em;
+    }
+  }
+  &.navflip:before{
+    color: rgb(226, 106, 106);
+    content: "+";
+  }
+}
+
+p.philosophy{
+  line-height: 2.4em;
+  font-size: 1.2em;
+  color: $fontc;
+  max-width: 840px;
+  @media #{$phone} {
+    font-size: 1em;
+    line-height: 2em;
+  }
+  a{
+    text-decoration: underline;
+    color: #bfd6c5;
+  }
+  span{
+    font-style: italic;
+  }
+}
+
+nav{
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  -moz-box-shadow: inset -8px 0 17px -15px #000;
+  -webkit-box-shadow: inset -8px 0 17px -15px #000;
+  box-shadow: inset -8px 0 17px -15px #000;
+  position: fixed; 
+  height: 110%;
+  top: -10%;
+  padding-top: 14em;
+  text-align: right;
+  background: white;
+  z-index: 10001;
+  background-image: url(../img/nav-l.jpg);
+  p{
+    padding: 1em 2em 1em 0em;
+    text-transform: uppercase;
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    position: relative;
+
+  } 
+  a{
+    text-decoration: none; 
+    color: #49628a; 
+    transition: all 0.1s cubic-bezier(0,.01,.32,.95);
+    -webkit-transition: all 0.1s cubic-bezier(0,.01,.32,.95);
+    -moz-transition: all 0.1s cubic-bezier(0,.01,.32,.95);
+    padding-right: 0;
+    &.active{
+      font-weight: 700;
+    }
+    &:hover{
+      padding-right: .4em;
+    }
+  }
+}
+
+.experience{
+  section.year{
+    padding-bottom: 2em;
+    max-width: 900px;
+    &:not(:first-child){
+      padding-top: 1em;
+    }
+  }
+  h2{
+    font-size: 2.8em;
+    padding-bottom: .8em;
+    margin-bottom: .4em;
+    border-bottom: 1px solid #bfd6c5;
+    @media #{$phone} {
+      font-size: 2em;
+      padding-bottom: .4em;
+      margin-bottom: .2em;
+      margin-top: .1em;
+    }
+  }
+  h3{
+    font-size: 1.6em;
+    @media #{$phone} {
+      font-size: 1.2em;
+    }
+    span.domain{
+      font-size: .8rem;
+      font-style: italic;
+      padding-left: 1em;
+    }
+  }
+  p{
+    font-size: 1em;
+    line-height: 1.6em;
+    padding: 1em 0;  
+  }
+  aside.tech{
+    display: inline-block;
+    padding: 1.2em 0;
+    font-size: .6em;
+    text-transform: uppercase;
+    line-height: 1.6em;
+  }
+  ul{
+    margin: 1.2em 0;
+  }
+  li{
+    border: 1px solid white;
+    font-size: .8em;
+    padding: .2em;
+    display: inline-block;
+    margin: .2em .4em .2em 0;
+   }
+  article{
+    padding: 2.6em 2.4em 1.8em 0;
+    @media #{$phone} {
+      padding: .6em 0 .2em 0;
+    }
+  }
+  div.pretog span{
+    border: 1px solid #bfd6c5;
+    padding: .4em 1.2em;
+    font-size: .8em;
+    top: 1.2em;
+    display: inline-block;
+    margin: .6em 0;
+    color: #bfd6c5;
+    transition: all .3s cubic-bezier(0,.01,.32,.95);
+    -webkit-transition: all .3s cubic-bezier(0,.01,.32,.95);
+    -moz-transition: all .3s cubic-bezier(0,.01,.32,.95);
+    cursor: pointer;
+  }
+
+  div.pretog figure.example{
+    border: 1px solid #bfd6c5;
+    width: 100%; 
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0em;
+    padding: .3em;
+    transition: all .3s cubic-bezier(0,.01,.32,.95);
+    -webkit-transition: all .3s cubic-bezier(0,.01,.32,.95);
+    -moz-transition: all .3s cubic-bezier(0,.01,.32,.95);
+    img{
+      width: 100%; 
+    }
+  }
+  div.toggled span{
+    background: #bfd6c5;
+    padding: .4em 1.2em;
+    font-size: .8em;
+    top: 1.2em;
+    display: inline-block;
+    margin: .6em 0;
+    color: #49628a;
+  }
+  div.toggled figure.example{
+    opacity: 1;
+    height: auto;
+    padding: .6em;
+    @media #{$phone} {
+      padding: .2em 0;
+      margin-top: .6em;
+    }
+    max-height: 21em;
+  }
+}
+
+
+.index{
+  color: $fontc;
+  padding: 16em 10em 2em 12em;
+  @media #{$phone} {
+    padding: 6em .6em 4em 3.2em;
+  }
+
+  p.links a{
+    transition: all 0.3s cubic-bezier(0,.01,.32,.95);
+    -webkit-transition: all 0.3s cubic-bezier(0,.01,.32,.95);
+    -moz-transition: all 0.3s cubic-bezier(0,.01,.32,.95);
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 1em;
+    line-height: 2.6em;
+    margin: 4em 0;
+    color: #bfd6c5;
+    border: 1px solid #bfd6c5;
+    padding: .4em 1.6em;
+    margin-left: 1.6em;
+    &:first-child{
+      margin-left: 0;
+    }
+    &:hover{
+      background: #bfd6c5;
+      color: #49628a;
+      padding: .4em 2.2em;
+    }
+    @media #{$phone} {
+      margin: 1em .2em;
+      padding: .2em .8em;
+      font-size: .8em;
+
+
+    }
+  }
+  main{
+    padding-top: 8em;
+  }
+}
+
+.index header{
   h1{
     font-family: 'Chronicle Display A', 'Chronicle Display B'; 
     font-size: 7.2em;
     font-weight: 700;
     font-style: italic;
   }
-  p{
+  h2{
     font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B';
     font-size: 1.3em;
     font-weight: 300;
@@ -60,4 +354,22 @@ body{
   &:after{
     bottom: -4em; 
   }
+  padding-bottom: 4em;
+
+  @media #{$phone} {
+    h1{
+      font-size: 3em;
+
+    }
+    h2{
+      font-size: 1em;
+    }
+    &:before, &:after{
+      display: none;
+    } 
+    padding-bottom: 1em;
+
+  }
 }
+
+@import "_animate.scss";
