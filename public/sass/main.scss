@@ -86,6 +86,7 @@ article.page{
   transition: all 0.1s cubic-bezier(0,.01,.32,.95);
   -webkit-transition: all 0.1s cubic-bezier(0,.01,.32,.95);
   -moz-transition: all 0.1s cubic-bezier(0,.01,.32,.95);
+  -webkit-backface-visibility: hidden;
   @media #{$phone} {
     top: 3.2em;
     left: 0;
