@@ -28,9 +28,14 @@ app.configure(function () {
   app.use(passport.initialize());
   app.use(passport.session());
   app.use(app.router);
-  app.use(express.csrf());
+
+   app.use(express.csrf());
   app.use(function(req, res, next) {
     res.cookie('XSRF-TOKEN', req.csrfToken());
+    if (!res.getHeader('Cache-Control') || !res.getHeader('Expires')) {
+      res.setHeader("Cache-Control", "public, max-age=345600"); // ex. 4 days in seconds.
+      res.setHeader("Expires", new Date(Date.now() + 345600000).toUTCString());  // in ms.
+    }
     next();
   });
 
