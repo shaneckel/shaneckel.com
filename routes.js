@@ -79,17 +79,29 @@ module.exports = function(app, passport) {
 
   app.get('/', function(req, res) {
     res.render('index');
+    if (!res.getHeader('Cache-Control') || !res.getHeader('Expires')) {
+      res.setHeader("Cache-Control", "public, max-age=345600"); // ex. 4 days in seconds.
+      res.setHeader("Expires", new Date(Date.now() + 345600000).toUTCString());  // in ms.
+    }
   });
  
   app.get('/templ/:name',  function (req, res) {
     var name = req.params.name;
      res.render('templ/' + name);
+      if (!res.getHeader('Cache-Control') || !res.getHeader('Expires')) {
+        res.setHeader("Cache-Control", "public, max-age=345600"); // ex. 4 days in seconds.
+        res.setHeader("Expires", new Date(Date.now() + 345600000).toUTCString());  // in ms.
+      }
   }); 
 
   //site catch-all
 
   app.get('*', function(req, res) {
     res.render('index');
+    if (!res.getHeader('Cache-Control') || !res.getHeader('Expires')) {
+      res.setHeader("Cache-Control", "public, max-age=345600"); // ex. 4 days in seconds.
+      res.setHeader("Expires", new Date(Date.now() + 345600000).toUTCString());  // in ms.
+    }
   });
  
   function ensureAuthenticated(req, res, next) {

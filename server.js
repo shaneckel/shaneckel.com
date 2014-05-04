@@ -33,6 +33,7 @@ app.configure(function () {
     res.cookie('XSRF-TOKEN', req.csrfToken());
     next();
   });
+
 });
 
 mongoConnection = config.mongoUser + ":" +
