@@ -1,6 +1,10 @@
 
 
-var Todo = require('./todo');
+var Todo      = require('./todo'),
+    express   = require('express'),
+    auth      = express.basicAuth(function(user, pass) {
+      return user === 'deeplocal' && pass === 'deeplocal';
+    })
 
 module.exports = function(app, passport) {
 
@@ -9,6 +13,10 @@ module.exports = function(app, passport) {
 
   app.get("/admin/admin", ensureAuthenticated, function(req, res){
     res.render('admin', { user: req.user});
+  });
+
+  app.get("/deeplocal", auth, function(req, res){
+    res.render('deeplocal', { user: req.user});
   });
 
   app.post('/admin/login',

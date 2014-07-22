@@ -53,6 +53,7 @@ main{
 }
 
 main.navflip{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   nav{
     width: 12em; 
     border-right: 1px solid rgb(226, 106, 106);
@@ -61,7 +62,7 @@ main.navflip{
     transform: rotateZ(0) translateX(0);
   }
   article.page{
-    margin-left: 4em; 
+    padding-left: 4em; 
   }
 }
 
@@ -74,13 +75,14 @@ article.page{
 }
 
 .navflipper{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   cursor: pointer;
   position: fixed; 
   z-index: 10002;
   font-weight: 300; 
   font-size: 1.8em;
   left: 1em; 
-  color: #bfd6c5;
+  color: rgb(226, 106, 106);
   top: 1em;
   padding: 10px;
   transition: all 0.1s cubic-bezier(0,.01,.32,.95);
@@ -92,13 +94,19 @@ article.page{
     left: 0;
   }
   &:before{
-    content:"☰";
+    display: block;
+    content: "";
+    width: 36px;
+    height: 36px;
+    background-image: url(../img/hamburger.png);
+    background-image: url(../img/hamburger.svg);
+    background-repeat: no-repeat;
   }  
   &:hover{
     color: rgb(226, 106, 106);
-    -webkit-transform: scale(1.2) ;
-    -moz-transform: scale(1.2) ;
-     transform: scale(1.2) ;
+    -webkit-transform: scale(1.1) ;
+    -moz-transform: scale(1.1) ;
+     transform: scale(1.1) ;
   }
   &.navflip{
     -webkit-transform: scale(3) rotateZ(45deg);
@@ -110,6 +118,7 @@ article.page{
     }
   }
   &.navflip:before{
+    background-image: none;
     color: rgb(226, 106, 106);
     content: "+";
   }
