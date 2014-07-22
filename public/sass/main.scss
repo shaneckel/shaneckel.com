@@ -45,6 +45,7 @@ main{
      transform: rotateZ(8deg) translateX(-4em);
   }
   article.page{
+    -webkit-overflow-scrolling : touch;
     left: 0em; 
     transition: all 0.3s cubic-bezier(0,.01,.32,.95);
     -webkit-transition: all 0.3s cubic-bezier(0,.01,.32,.95);
