@@ -45,7 +45,7 @@ main{
      transform: rotateZ(8deg) translateX(-4em);
   }
   article.page{
-    margin-left: 0em; 
+    left: 0em; 
     transition: all 0.3s cubic-bezier(0,.01,.32,.95);
     -webkit-transition: all 0.3s cubic-bezier(0,.01,.32,.95);
     -moz-transition: all 0.3s cubic-bezier(0,.01,.32,.95);
@@ -62,7 +62,7 @@ main.navflip{
     transform: rotateZ(0) translateX(0);
   }
   article.page{
-    padding-left: 4em; 
+   left: 4em; 
   }
 }
 
@@ -96,8 +96,8 @@ article.page{
   &:before{
     display: block;
     content: "";
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     background-image: url(../img/hamburger.png);
     background-image: url(../img/hamburger.svg);
     background-repeat: no-repeat;
@@ -121,6 +121,7 @@ article.page{
     background-image: none;
     color: rgb(226, 106, 106);
     content: "+";
+ 
   }
 }
 
