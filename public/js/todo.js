@@ -1,6 +1,5 @@
 angular.module('scotchTodo', ['todoController', 'todoService']);
 
-
 angular.module('todoService', [])
   .factory('Todos', function($http) {
     return {
@@ -49,7 +48,6 @@ angular.module('todoController', [])
 
       Todos.update(id, todoData)
         .success(function(data) {
-          console.log(data);
           $scope.formData = {}; 
           $scope.todos = data; 
         }) 

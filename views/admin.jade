@@ -6,32 +6,33 @@ html(lang="en")
     title Admin Section
    
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    meta(name='description', content='Shane Eckel is a designer and developer located in Pittsburgh, Pa.')
     meta(name='author', content='Shane Eckel')
    
     link(rel='stylesheet', type='text/css', href='//cloud.typography.com/6038632/763602/css/fonts.css')
-    link(href='../css/main.css', rel='stylesheet')
-    
+    link(href='../css/admin.css', rel='stylesheet')
     script(src="../js/angular.js")
     script(src="../js/todo.js")
   
   body#todos(ng-app="scotchTodo")
-    a(href="/admin/logout") logout
-    h1 connect and validate
-    p #{user.username}
- 
-    div.todo(ng-controller="mainController")
-      h1 length :  
-        span {{ todos.length }}
-     
-      div#todo-form
-        form
-          input(type="text" placeholder="todo" ng-model="formData.text")
-          button(type="submit" ng-click="createTodo()") add
+    
+    header(ng-controller="mainController")
+      p Welcome #{user.username}, you have {{ todos.length }} things to do.
+      p.logout
+        a(href="/admin/logout") logout
+      
+    article.todo(ng-controller="mainController")
+      section.information
+        div#todo-form
+          form
+            input(type="text" placeholder="Whatcha got to do..." ng-model="formData.text")
+            button(type="submit" ng-click="createTodo()") add
 
-      div.item(ng-repeat="todo in todos" ng-class="({{todo.done }}==true) ? 'done' : ''")
+      section.item(ng-repeat="todo in todos | orderBy:['done' ]" ng-class="({{todo.done }}==true) ? 'done' : ''")
         div.check(ng-click="updateTodo(todo._id, todo.done, todo.text )")
           p {{todo.text }}
         div.delete(ng-click="deleteTodo(todo._id)") X
-        
            
+    footer
+      p #{user.username}, you'll still have {{ todos.length }} things to do. No matter how far you scroll.
+      p.logout
+        a(href="/admin/logout") logout  

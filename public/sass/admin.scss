@@ -1,32 +1,156 @@
 
+@import "compass/reset";
+@import "compass/css3";
+@import "flexbox";
+
+@import "login";
+
+$desk   : "only screen and (min-width: 768px)"; // tablets and desktop
+$phone  : "only screen and (max-width: 767px)"; // phones
+$max    : "only screen and (min-width: 1024px)"; // max
+
+*, *:before, *:after{
+  box-sizing: border-box;
+}
+
 #todos{
+  font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B';
   background: #728fa2;
 }
 
-.item{
+header, footer{
   @include display-flex();
-  border-top: 1px solid #333;
+  padding: 2%;
+  color: #bcccd6;
+  p{
+    @include flex(6);
+    font-size: 1.2em;
+    &.logout{
+      @include flex(1);
+      text-align: right;
+      font-size: .9em;
+      a{ 
+        color: #bcccd6;
+      }
+    }
+  }
+}
+header{
+  border-bottom: 1px solid #bcccd6;
+}
+footer{
+  border-top: 1px solid #bcccd6;
+}
+
+section.information{
+  padding: 2% 0;
+  #todo-form form{
+    @include display-flex();    
+    input{
+      @include flex(11);
+      font-size: 1.6em;
+      padding: 1.25%;
+      border: 0;
+      margin: 0;
+    }
+    button{
+      @include flex(1);
+      @include flex-basis(1.6em);
+      border: 0;  
+      font-size: 1.2em;
+      font-weight: 700;
+      padding: 1.25%;
+      text-transform: uppercase;
+      color: white;
+      background: #325469;
+      margin: 0;
+    }
+  }
+}
+
+section.item{
+  @include display-flex();
   font-weight: 300;
   font-size: 1.6em;
+  border-bottom: 1px solid #bcccd6;
+  color: #144461;
+  &:hover{
+    opacity: .8;
+  }
   .check{
-    @include flex(16);
-    background: #7277a2;
+    @include flex(12);
+    background: #bcccd6;
     display: inline-block;
     padding: 1em;
   }
   .delete{
-    @include flex(1);
+    @include flex(0);
     background: #e13345;
     display: inline-block;
     padding: 1em 0;
     color: #f5bcc2;
     text-align: center;
     font-weight: 600;
+    @include flex-basis(0px);
+    overflow: hidden;
+    cursor: pointer;
+    border-left: 1px solid #f5bcc2;
   }
   &.done{
     .check{
-      background: #3c3e4e;
-
+      background: #e13345;
+      color: #f5bcc2;
     }
+    .delete{
+      @include flex(1);
+      @include flex-basis(1.6em);
+    }
+  }
+}
+
+@media #{$phone} {
+  article.todo{
+    font-size: .8em;
+  }
+  header p, footer p{
+    font-size: .8em;
+  }
+  section.information{
+    padding: 5% 0;
+
+    #todo-form form{
+      display: block;
+      input{
+        @include flex(0);
+        font-size: 1.6em;
+        padding: 2.5%;
+        border: 0;
+        width: 100%;
+      }
+      button{
+        @include flex(0);
+        @include flex-basis(1.6em);
+        border: 0;  
+        font-size: 1.2em;
+        font-weight: 700;
+        padding: 1.25%;
+        text-transform: uppercase;
+        color: white;
+        background: #325469;
+        width: 100%;
+        padding: 3%;
+        border-radius: 10px;
+        margin-top: 2.5%;
+      }
+    }
+  }
+}
+@media #{$max} {
+  #todos{
+    width: 80%;
+    margin-left: 10%;
+  }
+  article.todo{
+    padding: 1% 2% 2% 2%;
   }
 }

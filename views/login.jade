@@ -4,23 +4,19 @@ html(lang="en")
     meta(charset='utf-8')
    
     title Admin Section
-   
+    
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    meta(name='description', content='Shane Eckel is a designer and developer located in Pittsburgh, Pa.')
     meta(name='author', content='Shane Eckel')
    
     link(rel='stylesheet', type='text/css', href='//cloud.typography.com/6038632/763602/css/fonts.css')
-    link(href='/css/main.css', rel='stylesheet')
+    link(href='/css/admin.css', rel='stylesheet')
 
-  body
-    h1 hidden junk and stuff
-   
-    p login
-    form(action="/admin/login", method="post")
-      label User 
-      input(type="text", name="username" value="shane")
-      label Pass 
-      input(type="password", name="password" value="secret")
-      input(type="submit", name="submit")
-      p #{message}
+  body#todos
+    section.login
+      h1 shane's super secret section
+      form(action="/admin/login", method="post")
+        input(type="text", name="username", placeholder="login" )
+        input(type="password", name="password", placeholder="password")
+        input.button(type="submit", name="submit")
+        p #{message}
  
