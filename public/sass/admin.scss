@@ -147,13 +147,10 @@ section.item{
 }
 @media #{$max} {
   #todos{
-    width: 80%;
-    margin-left: 10%;
+    width: 90%;
+    margin-left: 5%;
   }
   article.todo{
     padding: 1% 2% 2% 2%;
   }
-}
-#todos{
-  font-size: .8em;
 }
