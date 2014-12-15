@@ -71,7 +71,7 @@ section.information{
 section.item{
   @include display-flex();
   font-weight: 300;
-  font-size: 1.6em;
+  font-size: 1em;
   border-bottom: 1px solid #bcccd6;
   color: #144461;
   &:hover{
@@ -81,13 +81,13 @@ section.item{
     @include flex(12);
     background: #bcccd6;
     display: inline-block;
-    padding: 1em;
+    padding: .8em;
   }
   .delete{
     @include flex(0);
     background: #e13345;
     display: inline-block;
-    padding: 1em 0;
+    padding: .8em 0;
     color: #f5bcc2;
     text-align: center;
     font-weight: 600;
@@ -131,7 +131,7 @@ section.item{
         @include flex(0);
         @include flex-basis(1.6em);
         border: 0;  
-        font-size: 1.2em;
+        font-size: 1em;
         font-weight: 700;
         padding: 1.25%;
         text-transform: uppercase;
@@ -153,4 +153,7 @@ section.item{
   article.todo{
     padding: 1% 2% 2% 2%;
   }
+}
+#todos{
+  font-size: .8em;
 }

@@ -27,7 +27,7 @@ html(lang="en")
             input(type="text" placeholder="Whatcha got to do..." ng-model="formData.text")
             button(type="submit" ng-click="createTodo()") add
 
-      section.item(ng-repeat="todo in todos | orderBy:['done' ]" ng-class="({{todo.done }}==true) ? 'done' : ''")
+      section.item(ng-repeat="todo in todos | orderBy:['text' ]" ng-class="({{todo.done }}==true) ? 'done' : ''")
         div.check(ng-click="updateTodo(todo._id, todo.done, todo.text )")
           p {{todo.text }}
         div.delete(ng-click="deleteTodo(todo._id)") X
