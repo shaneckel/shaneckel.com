@@ -29,7 +29,7 @@ app.configure(function () {
   app.use(passport.session());
   app.use(app.router);
 
-   app.use(express.csrf());
+  app.use(express.csrf());
   app.use(function(req, res, next) {
     res.cookie('XSRF-TOKEN', req.csrfToken());
     if (!res.getHeader('Cache-Control') || !res.getHeader('Expires')) {

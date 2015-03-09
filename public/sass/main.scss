@@ -297,7 +297,7 @@ nav{
   color: $fontc;
   padding: 16em 10em 2em 12em;
   @media #{$phone} {
-    padding: 6em .6em 4em 3.2em;
+    padding: 6em 1.6em 1em 1.6em;
   }
 
   p.links a{
@@ -324,7 +324,7 @@ nav{
     @media #{$phone} {
       margin: 1em .2em;
       padding: .2em .8em;
-      font-size: .8em;
+      font-size: .9em;
     }
   }
   main{
@@ -348,6 +348,14 @@ nav{
     color: #e8f0ea;
     span{
       font-style: italic;
+    }
+
+  }
+  @media #{$phone} {
+    h2{
+      line-height: 1.6em;
+      padding-top: 1em;
+     
     }
   }
   &:before, &:after{
@@ -381,5 +389,10 @@ nav{
 
   }
 }
-
+.experience{
+  padding: 2em 10em 2em 12em;
+  @media #{$phone} {
+    padding: .5em 1.6em 4em 1.6em;
+  }
+}
 @import "_animate.scss";

@@ -17,25 +17,11 @@ html(lang="en")
 
   body(ng-app="funtime", ng-class="{loading: loading}", id="init")
 
-    main(ng-class="{navflip:navflip}" ng-init="navflip=true")
-      div.navflipper(ng-class="{navflip:navflip}", ng-click="navflip=!navflip")
-
-      nav
-        p
-          a(href="/", class="nav", ng-class="{active: location.path() === '/'}")  index
-        
-        //- leave the creative out until more time.
-
-        //- p
-        //-   a(href="/creative", class="nav", ng-class="{active: location.path() === '/creative'}") creative
-        p
-          a(href="/experience", class="nav", ng-class="{active: location.path() === '/experience'}") experience
-        p
-          a(href="/information", class="nav", ng-class="{active: location.path() === '/information'}") information
+    main(ng-class="{navflip:navflip}") 
 
       article(ng-view class="page {{ pageClass }}")
  
-    script( asynch, src='/js/funtime.js')
+    script( async, src='/js/funtime.js')
  
     script.
       type="text/javascript"
