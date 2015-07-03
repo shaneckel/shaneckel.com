@@ -1,9 +1,6 @@
 doctype 5
 html(lang="en")
   head
-
-    //- shaneckel.com 
-    //- "Good artists copy, great artists steal."
    
     title Shane Eckel | Pittsburgh Designer & Javascript Programmer
     
@@ -17,9 +14,9 @@ html(lang="en")
 
   body(ng-app="funtime", ng-class="{loading: loading}", id="init")
 
-    main(ng-class="{navflip:navflip}") 
+    main
 
-      article(ng-view class="page {{ pageClass }}")
+      article(ng-view class="page")
  
     script( async, src='/js/funtime.js')
  

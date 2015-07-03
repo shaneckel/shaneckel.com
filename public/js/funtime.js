@@ -1,9 +1,9 @@
 
 // shaneckel.com 
-// "Good artists copy, great artists steal."
+// I set this whole thing up in about 10 minutes... It doesn't even have browserify...
+// seriously... what kind of jag does that... woof. 
 
-// stuff
-
+// outdated
 /*
  AngularJS v1.3.0-beta.7
  (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -268,7 +268,7 @@ function(){this.$get=function(){return{}}});n.directive("ngView",x);n.directive(
 
 
 
-// actual app
+// actual app that was written in 10 minutes... seriously... this whole thing bums me out.
 
 var app = angular.module('funtime', ['ngRoute', 'ngAnimate'])
   .config(['$routeProvider', '$locationProvider', '$httpProvider', 
@@ -279,20 +279,20 @@ var app = angular.module('funtime', ['ngRoute', 'ngAnimate'])
       templateUrl: '/templ/index'
     });
 
-    $routeProvider.when('/creative', {
-      controller: 'creativeCtrl',
-      templateUrl: '/templ/creative'
-    });
+    // $routeProvider.when('/creative', {
+    //   controller: 'creativeCtrl',
+    //   templateUrl: '/templ/creative'
+    // });
 
-    $routeProvider.when('/experience', {
-      controller: 'experienceCtrl',
-      templateUrl: '/templ/experience'
-    });
+    // $routeProvider.when('/experience', {
+    //   controller: 'experienceCtrl',
+    //   templateUrl: '/templ/experience'
+    // });
 
-    $routeProvider.when('/information', {
-      controller: 'informationCtrl',
-      templateUrl: '/templ/information'
-    });
+    // $routeProvider.when('/information', {
+    //   controller: 'informationCtrl',
+    //   templateUrl: '/templ/information'
+    // });
 
     $routeProvider.otherwise({redirectTo:'/'}); 
 
@@ -322,14 +322,14 @@ app.controller('indexCtrl', function($scope, $location) {
   $scope.pageClass = 'page-index';
 });
 
-app.controller('informationCtrl', function($scope, $location) { 
-  $scope.pageClass = 'page-information';
-});
+// app.controller('informationCtrl', function($scope, $location) { 
+//   $scope.pageClass = 'page-information';
+// });
 
-app.controller('experienceCtrl', function($scope, $location) { 
-  $scope.pageClass = 'page-experience';
-});
+// app.controller('experienceCtrl', function($scope, $location) { 
+//   $scope.pageClass = 'page-experience';
+// });
 
-app.controller('creativeCtrl', function($scope, $location) { 
-  $scope.pageClass = 'page-creative';
-});
+// app.controller('creativeCtrl', function($scope, $location) { 
+//   $scope.pageClass = 'page-creative';
+// });
