@@ -23,7 +23,7 @@ app.configure(function () {
   app.use(express.cookieParser());
   app.use(express.json());
   app.use(express.urlencoded());
-  app.use(express.session({ secret: 'keyboard cat' }));
+  app.use(express.session({ secret: 'keyboard swag' }));
   app.use(flash());
   app.use(passport.initialize());
   app.use(passport.session());
