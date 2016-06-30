@@ -12,23 +12,23 @@ $fontc: #e5e7ec;
 }
 
 body{
-  background-color: #49628a;
+  background-color: #323d52;
   font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B';
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% auto;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   overflow-x: hidden;
-
-  @media #{$desk} {
-    background-image: url(../img/main-l.jpg);
-  }
-  @media #{$phone} {
-    background-image: url(../img/main-s.jpg);
-  }
+  //
+  // @media #{$desk} {
+  //   background-image: url(../img/main-l.jpg);
+  // }
+  // @media #{$phone} {
+  //   background-image: url(../img/main-s.jpg);
+  // }
   a{
-    text-decoration: none; 
-    color: #e8f0ea; 
+    text-decoration: none;
+    color: #e8f0ea;
   }
 }
 
@@ -46,7 +46,7 @@ main{
   }
   article.page{
     -webkit-overflow-scrolling : touch;
-    left: 0em; 
+    left: 0em;
     transition: all 0.3s cubic-bezier(0,.01,.32,.95);
     -webkit-transition: all 0.3s cubic-bezier(0,.01,.32,.95);
     -moz-transition: all 0.3s cubic-bezier(0,.01,.32,.95);
@@ -56,33 +56,33 @@ main{
 main.navflip{
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   nav{
-    width: 12em; 
+    width: 12em;
     border-right: 1px solid rgb(226, 106, 106);
     -webkit-transform: rotateZ(0) translateX(0);
     -moz-transform: rotateZ(0) translateX(0);
     transform: rotateZ(0) translateX(0);
   }
   article.page{
-   left: 4em; 
+   left: 4em;
   }
 }
 
 article.page{
-  position:absolute; 
-  top:0;  
-  width:100%; 
+  position:absolute;
+  top:0;
+  width:100%;
   z-index: 66;
-  left:0; 
+  left:0;
 }
 
 .navflipper{
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   cursor: pointer;
-  position: fixed; 
+  position: fixed;
   z-index: 10002;
-  font-weight: 300; 
+  font-weight: 300;
   font-size: 1.8em;
-  left: 1em; 
+  left: 1em;
   color: rgb(226, 106, 106);
   top: 1em;
   padding: 10px;
@@ -102,7 +102,7 @@ article.page{
     background-image: url(../img/hamburger.png);
     background-image: url(../img/hamburger.svg);
     background-repeat: no-repeat;
-  }  
+  }
   &:hover{
     color: rgb(226, 106, 106);
     -webkit-transform: scale(1.1) ;
@@ -122,7 +122,7 @@ article.page{
     background-image: none;
     color: rgb(226, 106, 106);
     content: "+";
- 
+
   }
 }
 
@@ -151,7 +151,7 @@ nav{
   -moz-box-shadow: inset -8px 0 17px -15px #000;
   -webkit-box-shadow: inset -8px 0 17px -15px #000;
   box-shadow: inset -8px 0 17px -15px #000;
-  position: fixed; 
+  position: fixed;
   height: 110%;
   top: -10%;
   padding-top: 14em;
@@ -167,10 +167,10 @@ nav{
     text-align: right;
     position: relative;
 
-  } 
+  }
   a{
-    text-decoration: none; 
-    color: #49628a; 
+    text-decoration: none;
+    color: #49628a;
     transition: all 0.1s cubic-bezier(0,.01,.32,.95);
     -webkit-transition: all 0.1s cubic-bezier(0,.01,.32,.95);
     -moz-transition: all 0.1s cubic-bezier(0,.01,.32,.95);
@@ -218,7 +218,7 @@ nav{
   p{
     font-size: 1em;
     line-height: 1.6em;
-    padding: 1em 0;  
+    padding: 1em 0;
   }
   aside.tech{
     display: inline-block;
@@ -259,7 +259,7 @@ nav{
 
   div.pretog figure.example{
     border: 1px solid #bfd6c5;
-    width: 100%; 
+    width: 100%;
     overflow: hidden;
     opacity: 0;
     max-height: 0em;
@@ -268,7 +268,7 @@ nav{
     -webkit-transition: all .3s cubic-bezier(0,.01,.32,.95);
     -moz-transition: all .3s cubic-bezier(0,.01,.32,.95);
     img{
-      width: 100%; 
+      width: 100%;
     }
   }
   div.toggled span{
@@ -334,7 +334,7 @@ nav{
 
 .index header{
   h1{
-    font-family: 'Chronicle Display A', 'Chronicle Display B'; 
+    font-family: 'Chronicle Display A', 'Chronicle Display B';
     font-size: 7.2em;
     font-weight: 700;
     font-style: italic;
@@ -355,7 +355,7 @@ nav{
     h2{
       line-height: 1.6em;
       padding-top: 1em;
-     
+
     }
   }
   &:before, &:after{
@@ -370,7 +370,7 @@ nav{
     top: -4em;
   }
   &:after{
-    bottom: -4em; 
+    bottom: -4em;
   }
   padding-bottom: 4em;
 
@@ -384,7 +384,7 @@ nav{
     }
     &:before, &:after{
       display: none;
-    } 
+    }
     padding-bottom: 1em;
 
   }
