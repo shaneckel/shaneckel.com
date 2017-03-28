@@ -3,8 +3,8 @@
 @import "compass/css3";
 @import "flexbox";
 
-$desk: "only screen and (min-width: 768px)";  // tablets and desktop
-$phone: "only screen and (max-width: 767px)"; // phones
+$desk: "only screen and (min-width: 768px)";
+$phone: "only screen and (max-width: 767px)";
 $fontc: #e5e7ec;
 
 *, *:before, *:after{
@@ -17,15 +17,8 @@ body{
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% auto;
-  // overflow-y: scroll;
   overflow-x: hidden;
-  //
-  // @media #{$desk} {
-  //   background-image: url(../img/main-l.jpg);
-  // }
-  // @media #{$phone} {
-  //   background-image: url(../img/main-s.jpg);
-  // }
+
   a{
     text-decoration: none;
     color: #e8f0ea;
@@ -389,10 +382,12 @@ nav{
 
   }
 }
+
 .experience{
   padding: 2em 10em 2em 12em;
   @media #{$phone} {
     padding: .5em 1.6em 4em 1.6em;
   }
 }
+
 @import "_animate.scss";
