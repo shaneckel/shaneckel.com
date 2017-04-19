@@ -1,7 +1,10 @@
 language: node_js
 node_js:
-  - "7"
+- '7'
 deploy:
   provider: gae
-  keyfile: gae-key.json
+  keyfile: shaneckel-test-5916bd69f511.json
   project: default
+before_install:
+- openssl aes-256-cbc -K $encrypted_7e805129ca2f_key -iv $encrypted_7e805129ca2f_iv
+  -in shaneckel-test-5916bd69f511.json.enc -out shaneckel-test-5916bd69f511.json -d
