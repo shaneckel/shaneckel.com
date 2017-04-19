@@ -1,20 +1,20 @@
 language: node_js
 node_js:
-- '7'
+  - '7'
 env:
-- PATH=$PATH:$HOME/google-cloud-sdk/bin CLOUDSDK_CORE_DISABLE_PROMPTS=1
+  - PATH=$PATH:$HOME/google-cloud-sdk/bin CLOUDSDK_CORE_DISABLE_PROMPTS=1
 before_install:
 - openssl aes-256-cbc -K $encrypted_7e805129ca2f_key -iv $encrypted_7e805129ca2f_iv
--in shaneckel-test-5916bd69f511.json.enc -out shaneckel-test-5916bd69f511.json -d
+- in shaneckel-test-5916bd69f511.json.enc -out shaneckel-test-5916bd69f511.json -d
 - if [ ! -d $HOME/google-cloud-sdk ]; then
-  curl https://sdk.cloud.google.com | bash;
-fi
+    curl https://sdk.cloud.google.com | bash;
+  fi
 - ssh-keygen -q -N "" -f ~/.ssh/google_compute_engine
 - gcloud auth activate-service-account --key-file shaneckel-test-5916bd69f511.json
 install:
-- gcloud config set compute/zone us-central1-b
-- gcloud config set project shaneckel-test
-- npm install
+  - gcloud config set compute/zone us-central1-b
+  - gcloud config set project shaneckel-test
+  - npm install
 script:
-- gcloud -q app deploy app.yaml
-- npm start
+  - gcloud -q app deploy app.yaml
+  - npm start
