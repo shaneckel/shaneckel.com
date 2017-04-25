@@ -15,5 +15,5 @@ automatic_scaling:
   cpu_utilization:
     target_utilization: 0.3
 env_variables:
-  SWAG: dope
-  SWIG: dipe
+  SWAG: 
+  SWIG: 
