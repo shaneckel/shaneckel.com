@@ -10,7 +10,10 @@ app.use(express.static(path.join(__dirname + '/public')));
 app.use(app.router);
 
 app.get('*', function(req, res) {
-  res.render('index' , {swag: process.env.SWAG});
+  res.render('index' , {
+      swag: process.env.SWAG,
+      swig: process.env.SWIG
+    });
 });
 
 app.listen(process.env.PORT || 3000);

@@ -13,6 +13,9 @@ before_install:
 - if [ ! -d $HOME/google-cloud-sdk ]; then curl https://sdk.cloud.google.com | bash;
   fi
 - gcloud auth activate-service-account --key-file shaneckel-test-0aa6c9742f32.json
+- echo process.env.SWIG
+- echo "bing bong Hello"
+- echo process.env.SWAG
 install:
 - gcloud config set compute/zone us-east1-b
 - gcloud config set project shaneckel-test
