@@ -13,11 +13,12 @@ before_install:
 - if [ ! -d $HOME/google-cloud-sdk ]; then curl https://sdk.cloud.google.com | bash;
   fi
 - gcloud auth activate-service-account --key-file shaneckel-test-0aa6c9742f32.json
-- echo $SWIG
-- echo $SWAG
+- sed 's/swag/$SWAG/;s/swig/$SWIG/' app.yaml.tmp > app.yaml
+- echo app.yaml
 install:
 - gcloud config set compute/zone us-east1-b
 - gcloud config set project shaneckel-test
 - npm install
 script:
-- gcloud -q app deploy app.yaml
+- echo app.yaml
+#- gcloud -q app deploy app.yaml
