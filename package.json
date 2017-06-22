@@ -2,6 +2,9 @@
   "name": "shaneckel.com",
   "version": "1.0.0",
   "description": "Shaneckel's Personal Site",
+  "engines": {
+    "node": "8.0.0"
+  },
   "author": {
     "name": "Shane Eckel",
     "email": "shaneckel@gmail.com",
