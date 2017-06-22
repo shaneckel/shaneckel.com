@@ -6,12 +6,8 @@ before_install:
   -in gce-key.json.enc -out gce-key.json -d
 - echo "  SWAG:" $SWAG >> app.yaml
 - echo "  SWIG:" $SWIG >> app.yaml
-before_deploy:
-- source ~/virtualenv/python2.7/bin/activate
 deploy:
   provider: gae
-  edge:
-    branch: gae-python-2.7
   keyfile: gce-key.json
   project: rational-axe-725
   on: master

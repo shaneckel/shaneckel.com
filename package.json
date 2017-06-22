@@ -17,6 +17,7 @@
     "jade": "^0.35.0"
   },
   "scripts": {
+    "test": "echo \"no tests for today.\" && exit 0",
     "start": "node server.js"
   }
 }
