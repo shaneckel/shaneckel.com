@@ -4,7 +4,6 @@ node_js:
 before_install:
 - openssl aes-256-cbc -K $encrypted_7e805129ca2f_key -iv $encrypted_7e805129ca2f_iv
   -in gce-key.json.enc -out gce-key.json -d
-- curl https://sdk.cloud.google.com | bash --disable-prompts --install-dir=$HOME
 - gcloud auth activate-service-account --key-file gce-key.json
 - echo "  SWAG:" $SWAG >> app.yaml
 - echo "  SWIG:" $SWIG >> app.yaml
