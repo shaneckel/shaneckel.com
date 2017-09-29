@@ -1,0 +1,103 @@
+html, body {
+  color: #000;
+  letter-spacing: 0.5px;
+  font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B';
+  margin: 0;
+  background-attachment: fixed;
+}
+
+html{
+  background-image: linear-gradient(#7b4444, #190b20);
+  min-height:100%;
+}
+
+h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 4.2rem;
+  font-weight: 300;
+}
+
+h2 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  font-size: 1.1rem;
+  margin-bottom: 4rem;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+a, a:hover, a:focus, a:visited {
+  color: #000;
+}
+
+.sep{
+  display: block;
+  background: black;
+  width: 5em;
+  height: .28em;
+  margin-bottom: 4em;
+}
+
+header{
+  width: 100%;
+  display: flex;
+  div{
+    width: 50%;
+    flex: 1;
+    padding: 8em 0 8em 10em;
+    &.side{
+      background: rgba(196, 186, 186, 0.21);
+      flex: 1;
+      clip-path: polygon(0 100%,20% 0,100% 0,100% 100%);
+    }
+  }
+}
+
+.arrow{
+  width: 3em;
+  height: 3em;
+  padding: 1em;
+  border-radius: 2em;
+  border: 0;
+  box-shadow: 1px 1px 3px 1px rgba(51, 51, 51, 0.39);
+  transition: background 1s;
+  position: relative;
+  background-color: rgba(196, 186, 186, 0.55);
+  cursor:pointer;
+  margin: 6px;
+  top: 0;
+  outline: 0;
+  &:hover{
+    transition: background 1s;
+    background-color: rgba(196, 186, 186, 0.8);
+  }
+  &:active{
+    top: 2px;
+    left: 1px;
+  }
+}
+
+.main-header{
+  padding: 8em 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 20%;
+  margin-right: 10%;
+}
+
+.container{
+  margin: 2em 0;
+  padding: 6em 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.main{
+  background: hsla(264, 58%, 32%, 0.12);
+}
