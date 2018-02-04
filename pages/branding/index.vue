@@ -2,7 +2,7 @@
   <section>
     <header>
       <div class="info">
-        <h1>Logos</h1>
+        <h1>Branding</h1>
         <span class="sep"></span>
       </div>
     </header>
@@ -77,6 +77,20 @@ header{
     background-size: contain;
     background-position: center;
     background-color: rgba(87, 81, 95, 0);
+    &:nth-child(4n-3){
+      background-color: rgba(83, 85, 92, .4);
+    }
+    &:nth-child(4n-2){
+      background-color: rgba(83, 85, 92, .1);
+    }
+    &:nth-child(4n-1){
+      background-color: rgba(83, 85, 92, .2);
+    }
+    &:nth-child(4n){
+      background-color: rgba(83, 85, 92, .3);
+    }
+
+    transition: background .4s;
     &:hover{
       transition: background .4s;
       background-color: rgba(196, 186, 186, 0.81);

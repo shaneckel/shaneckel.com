@@ -9,8 +9,8 @@ module.exports = {
     ],
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700' },
-      { rel: 'stylesheet', type: 'text/css', href: '//cloud.typography.com/6038632/763602/css/fonts.css' },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', type: 'text/css', href: '//cloud.typography.com/6038632/763602/css/fonts.css' }
     ]
   },
   router: {

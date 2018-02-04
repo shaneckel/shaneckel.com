@@ -1,29 +1,35 @@
 <template>
-  <main class='wholething'>
-    <Background></Background>
+  <main>
+    <BackgroundNoise></BackgroundNoise>
+    <BackgroundGradient></BackgroundGradient>
+    <BackgroundAnimation></BackgroundAnimation>
     <Navigation></Navigation>
     <nuxt v-bind:class="{navactive: $store.state.navigation}" />
   </main>
 </template>
 
 <script>
-import Navigation from '../components/Navigation.vue'
-import Background from '../components/Background.vue'
+import Navigation from '~/components/Navigation.vue'
+import BackgroundGradient from '~/components/BackgroundGradient.vue'
+import BackgroundNoise from '~/components/BackgroundNoise.vue'
+import BackgroundAnimation from '~/components/BackgroundAnimation.vue'
 
 export default {
   components: {
     Navigation,
-    Background
+    BackgroundGradient,
+    BackgroundNoise,
+    BackgroundAnimation
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
-.wholething{
+main{
   overflow-x: hidden;
 }
- 
+
 .button, .button:visited {
   display: inline-block;
   color: black;

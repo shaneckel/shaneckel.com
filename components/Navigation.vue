@@ -1,23 +1,26 @@
 <template lang="html">
   <nav class="mobile-toggle" v-on:mouseleave="toggle" v-on:mouseenter="toggle" v-bind:class="{navactive: $store.state.navigation}">
     <div class="toggle">|||</div>
-    <div class="list" >
-      <p><nuxt-link :to="'/'">index</nuxt-link></p>
-      <p><nuxt-link :to="'/abstracts'">abstracts</nuxt-link></p>
-      <p><nuxt-link :to="'/logos'">logos</nuxt-link></p>
-      <p><nuxt-link :to="'/history'">work history</nuxt-link></p>
-      <p><nuxt-link :to="'/projects'">projects</nuxt-link></p>
-      <p>about</p>
-      <p>writing</p>
-      <p>sketchbook</p>
-      <p>photography</p>
+    <div class="list">
+      <NavigationItem :url="'about'"></NavigationItem>
+      <NavigationItem :url="'abstracts'"></NavigationItem>
+      <NavigationItem :url="'branding'"></NavigationItem>
+      <NavigationItem :url="'history'"></NavigationItem>
+      <NavigationItem :url="'sketchbook'"></NavigationItem>
+      <NavigationItem :url="'writing'"></NavigationItem>
     </div>
   </nav>
 </template>
 
 <script>
+import NavigationItem from '~/components/NavigationItem.vue'
+
 export default {
   name: 'Navigation',
+
+  components: {
+    NavigationItem
+  },
 
   data: () => ({
     loading: false,
@@ -27,6 +30,7 @@ export default {
   methods: {
     toggle () {
       this.$store.commit('setnavigation')
+      this.$store.commit('setcolors')
     }
   }
 }

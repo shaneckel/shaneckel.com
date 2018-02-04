@@ -2,7 +2,7 @@
   <section>
     <header>
       <div class="info">
-        <h1>Work History</h1>
+        <h1>History</h1>
         <span class="sep"></span>
       </div>
     </header>
