@@ -1,3 +1,4 @@
+
 html, body {
   color: #000;
   letter-spacing: 0.5px;
@@ -7,6 +8,8 @@ html, body {
 
 html{
   min-height:100%;
+  background: #593b45;
+
 }
 
 h1 {
@@ -95,8 +98,4 @@ header{
   padding: 6em 0;
   margin-bottom: 0;
   padding-bottom: 0;
-}
-
-.main{
-  background: hsla(264, 58%, 32%, 0.12);
 }

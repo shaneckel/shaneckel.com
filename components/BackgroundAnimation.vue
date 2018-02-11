@@ -10,53 +10,37 @@
 import { TweenLite } from 'gsap'
 
 function valueToPoint (value, index, total) {
-  var x = 100
-  var y = -value * 10
-  var angle = 6.4 / total * index
+  var x = (value * 2)
+  var y = (value * 2)
+  var angle = 3.14 / total * index
   var cos = Math.cos(angle)
   var sin = Math.sin(angle)
-  var tx = x * cos - y * sin + 10
-  var ty = x * sin + y * cos + 20
+  var tx = x * cos - y * sin + 40
+  var ty = x * sin + y * cos + 200
   return {
-    x: tx,
-    y: ty
+    x: Math.abs(tx) >= 100 ? 100 : Math.abs(tx),
+    y: Math.abs(ty)
   }
 }
 
 function generatePoints (stats) {
   var total = stats.length
-  var dots = stats.map(function (stat, index) {
+  var funStuff = stats.map(function (stat, index) {
     var point = valueToPoint(stat, index, total)
-    return point.x + ',' + point.y
+    return Math.floor(point.x) + ',' + Math.floor(point.y)
   }).join(' ')
-
-  console.log(dots)
-
-  // 110,-440 416.9052250168882,131.92916444767894 -124.85396363602337,613.1394511340939 -459.40911389725875,-121.61597293451874
-
-  return `
-  40 0,
-  200 0,
-  200 200,
-  100 200,
-  50 60
-  `
-  // return stats.map(function (stat, index) {
-  //   var point = valueToPoint(stat, index, total)
-  //   return point.x + ',' + point.y
-  // }).join(' ')
+  return '40 0,200 0,200 200,100 200, ' + funStuff
 }
 
 export default {
-
   data: function () {
-    let stats = Array.apply(null, { length: 4 })
+    let stats = Array.apply(null, { length: 11 })
       .map(function () { return 100 })
     return {
       stats: stats,
       rendered_points: generatePoints(stats),
       interval: null,
-      updateInterval: 1000
+      updateInterval: 5000
     }
   },
 
@@ -83,7 +67,7 @@ export default {
       })
     },
     newRandomValue: function () {
-      return Math.ceil(40 + Math.random() * 20)
+      return Math.ceil(38 + Math.random() * 18)
     },
     resetInterval: function () {
       var vm = this
@@ -124,7 +108,7 @@ svg {
 polygon {
   width: 100%;
   fill: #b5c5c7;
-  opacity: .3;
+  opacity: .25;
   // transform: translate(45%,0px);
 }
 </style>

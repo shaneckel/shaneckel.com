@@ -17,15 +17,13 @@ module.exports = {
     middleware: 'navigation'
   },
   css: [
-    { src: '~assets/scss/main.scss', lang: 'scss' },
-    'swiper/dist/css/swiper.css',
-  ],
-  plugins: [
-    { src: '~/plugins/swiper.js', ssr: false },
+    { src: '~assets/scss/main.scss', lang: 'scss' }
   ],
   loading: '~/components/Loading.vue',
   build: {
-    vendor: ['axios'],
+    vendor: [
+      'axios'
+    ],
     extend (config, ctx) {
       if (ctx.isClient) {
         config.module.rules.push({

@@ -38,15 +38,17 @@ export default {
       TweenLite.to(el.querySelector('.main'), 1, {opacity: 1, x: '0px', ease: Power3.easeOut}).delay(0.6)
       TweenMax.staggerFrom('.asset', 2, {opacity: 0, delay: 0.15, ease: Power3.easeOut}, 0.2)
       done()
+    },
+    leave (el, done) {
+      TweenLite.to(el.querySelector('h1'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn})
+      TweenLite.to(el.querySelector('.sep'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn}).delay(0.2)
+      TweenLite.to(el.querySelector('.main'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn, onComplete: done}).delay(0.4)
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-.main{
-  background: rgba(133, 85, 85, 0.23);
-}
 header{
   width: 100%;
   display: flex;
@@ -76,25 +78,6 @@ header{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    background-color: rgba(87, 81, 95, 0);
-    &:nth-child(4n-3){
-      background-color: rgba(83, 85, 92, .4);
-    }
-    &:nth-child(4n-2){
-      background-color: rgba(83, 85, 92, .1);
-    }
-    &:nth-child(4n-1){
-      background-color: rgba(83, 85, 92, .2);
-    }
-    &:nth-child(4n){
-      background-color: rgba(83, 85, 92, .3);
-    }
-
-    transition: background .4s;
-    &:hover{
-      transition: background .4s;
-      background-color: rgba(196, 186, 186, 0.81);
-    }
     &:nth-child(1){
       background-image: url('~/assets/img/logo-superior1.png');
     }

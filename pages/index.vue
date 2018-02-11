@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <header class="main-header">
-      <h1><nuxt-link :to="'/'">Shane Eckel</nuxt-link></h1>
+      <h1>Shane Eckel</h1>
       <span class="sep"></span>
       <h2>Creative Developer</h2>
     </header>
@@ -18,6 +18,7 @@ export default {
   transition: {
     css: false,
     appear: true,
+    mode: 'out-in',
     beforeEnter (el) {
       TweenLite.set(el.querySelector('h1'), {opacity: 0, x: '-200px'})
       TweenLite.set(el.querySelector('h2'), {opacity: 0, x: '-200px'})
@@ -30,6 +31,12 @@ export default {
       TweenLite.to(el.querySelector('h2'), 1, {opacity: 1, x: '0px', ease: Power3.easeOut}).delay(0.6)
       TweenLite.to(el.querySelector('.main'), 1, {opacity: 1, x: '0px', ease: Power3.easeOut}).delay(0.8)
       done()
+    },
+    leave (el, done) {
+      TweenLite.to(el.querySelector('h1'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn})
+      TweenLite.to(el.querySelector('.sep'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn}).delay(0.2)
+      TweenLite.to(el.querySelector('h2'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn}).delay(0.4)
+      TweenLite.to(el.querySelector('.main'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn, onComplete: done}).delay(0.5)
     }
   }
 }

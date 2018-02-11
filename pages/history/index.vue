@@ -33,6 +33,11 @@ export default {
       TweenLite.to(el.querySelector('.main'), 1, {opacity: 1, x: '0px', ease: Power3.easeOut}).delay(0.6)
       TweenMax.staggerFrom('.asset', 2, {opacity: 0, delay: 0.15, ease: Power3.easeOut}, 0.2)
       done()
+    },
+    leave (el, done) {
+      TweenLite.to(el.querySelector('h1'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn})
+      TweenLite.to(el.querySelector('.sep'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn}).delay(0.2)
+      TweenLite.to(el.querySelector('.main'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn, onComplete: done}).delay(0.4)
     }
   }
 }
