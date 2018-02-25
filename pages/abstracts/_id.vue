@@ -1,12 +1,12 @@
 <template>
   <section>
     <header class="intro-head content">
-      <h1>Sketchbook</h1>
+      <h1>{{$route.params.id}}</h1>
       <span class="sep"></span>
     </header>
-    <div class="main">
-      <p>sketchs</p>
-    </div>
+    <article class="main content">
+      <p>look. stuff</p>
+    </article>
   </section>
 </template>
 
@@ -14,7 +14,6 @@
 import { TweenLite, Power3 } from 'gsap'
 
 export default {
-  name: 'abstracts',
   transition: {
     css: false,
     appear: true,
@@ -32,12 +31,8 @@ export default {
     leave (el, done) {
       TweenLite.to(el.querySelector('h1'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn})
       TweenLite.to(el.querySelector('.sep'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn}).delay(0.2)
-      TweenLite.to(el.querySelector('.main'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn, onComplete: done}).delay(0.4)
+      TweenLite.to(el.querySelector('.main'), 1, {opacity: 0, ease: Power3.easeIn, onComplete: done}).delay(0.4)
     }
   }
 }
 </script>
-
-<style scoped lang="scss">
-
-</style>

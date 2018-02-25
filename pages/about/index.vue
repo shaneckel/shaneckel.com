@@ -1,12 +1,10 @@
 <template>
   <section>
-    <header>
-      <div class="info">
-        <h1>About</h1>
-        <span class="sep"></span>
-      </div>
+    <header class="intro-head content">
+      <h1>About</h1>
+      <span class="sep"></span>
     </header>
-    <main class="main">
+    <main class="main content">
       <p>Hello. I'm Shane. I do a lot of things. I write code. I design stuff. I help businesses. I raise children. I do husband stuff. I also greatly enjoy working with my hands. If you need anything from me, send me an email.</p>
     </main>
   </section>
@@ -42,5 +40,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+  main {
+    color: white;
+  }
 </style>

@@ -1,5 +1,9 @@
 <template>
   <section>
+    <header class="intro-head content">
+      <h1>Project</h1>
+      <span class="sep"></span>
+    </header>
     <h1>projects test</h1>
   </section>
 </template>

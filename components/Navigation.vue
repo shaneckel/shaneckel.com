@@ -4,7 +4,7 @@
     <div class="list">
       <NavigationItem :url="'about'"></NavigationItem>
       <NavigationItem :url="'abstracts'"></NavigationItem>
-      <NavigationItem :url="'branding'"></NavigationItem>
+      <NavigationItem :url="'projects'"></NavigationItem>
       <NavigationItem :url="'history'"></NavigationItem>
       <NavigationItem :url="'sketchbook'"></NavigationItem>
       <NavigationItem :url="'writing'"></NavigationItem>
@@ -45,7 +45,7 @@ export default {
     background: rgba(255, 255, 255, .3);
     text-align: center;
     width: 12em;
-    height: 100%;
+    height: 3em;
     left: -12em;
     transition: left .2s;
     &.navactive{

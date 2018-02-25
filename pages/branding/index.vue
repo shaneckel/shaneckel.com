@@ -1,10 +1,8 @@
 <template>
   <section>
-    <header>
-      <div class="info">
-        <h1>Branding</h1>
-        <span class="sep"></span>
-      </div>
+    <header class="intro-head content">
+      <h1>Branding</h1>
+      <span class="sep"></span>
     </header>
     <div class="main logos">
       <div class="asset"></div>
@@ -49,20 +47,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-header{
-  width: 100%;
-  display: flex;
-  div{
-    width: 50%;
-    flex: 1;
-    padding: 8em;
-    &.side{
-      background: rgba(196, 186, 186, 0.21);
-      flex: 1;
-      clip-path: polygon(0 100%,20% 0,100% 0,100% 100%);
-    }
-  }
-}
+
 .logos{
   color: #aaa;
   position: relative;

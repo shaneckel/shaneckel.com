@@ -1,0 +1,53 @@
+
+@import 'mixins';
+@import '~modularscale-sass/stylesheets/modularscale';
+
+$white: #fff;
+
+$breakpoints: (
+  zero: 0,
+  phone: 413px,
+  phablet: 550px,
+  tablet: 768px,
+  laptop: 1024px,
+  desktop: 1280px,
+  full: 1440px,
+  max: 1680px
+);
+
+$base-font-size: 1em;
+$modularscale: (
+  base: $base-font-size,
+  ratio: 1.58
+);
+
+$base-line-height: 1.25em;
+$type-settings: (
+  -1: (
+    font-size: ms(-1),
+    line-height: $base-line-height * 1.5
+  ),
+  0: (
+    font-size: ms(0),
+    line-height: $base-line-height * 1.5
+  ),
+  1: (
+    font-size: ms(1),
+    line-height: $base-line-height
+  ),
+  2: (
+    font-size: ms(2),
+    line-height: $base-line-height
+  ),
+  3: (
+    font-size: ms(3),
+    line-height: $base-line-height
+  ),
+  4: (
+    font-size: ms(4),
+    line-height: $base-line-height
+  ),
+);
+
+$full-width: map-get($breakpoints, full);
+$max-width: map-get($breakpoints, max);

@@ -1,12 +1,10 @@
 <template>
   <section>
-    <header>
-      <div class="info">
-        <h1>Writing</h1>
-        <span class="sep"></span>
-      </div>
+    <header class="intro-head content">
+      <h1>Writing</h1>
+      <span class="sep"></span>
     </header>
-    <div class="main">
+    <div class="main content">
       <p>writings</p>
     </div>
   </section>
