@@ -44,6 +44,7 @@ a, a:hover, a:focus, a:visited {
 }
 
 .intro-head{
+  min-height: 80%;
   h1{
     font-family: 'Libre Baskerville', serif;
     font-weight: 300;
@@ -117,6 +118,9 @@ a, a:hover, a:focus, a:visited {
   }
   @include breakpoint-max(full){
     margin: $base-line-height auto;
+  }
+  @include breakpoint-min(laptop) {
+    margin: $base-line-height * 2;
   }
 }
 
