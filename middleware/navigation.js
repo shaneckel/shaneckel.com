@@ -1,5 +1,5 @@
 export default ({ store, route }) => {
-  console.log(route)
+  store.commit('closenav')
   if (route.name !== 'index') {
     store.commit('setroute', route.path.replace(/(\/[^/]*).*/, '$1').substring(1))
   } else {

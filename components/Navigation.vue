@@ -1,6 +1,6 @@
 <template lang="html">
-  <nav class="mobile-toggle" v-on:mouseleave="toggle" v-on:mouseenter="toggle" v-bind:class="{navactive: $store.state.navigation}">
-    <div class="toggle">|||</div>
+  <nav class="mobile-toggle" v-on:mouseleave="togglecolors" v-bind:class="{navactive: $store.state.navigation}">
+    <div class="toggle" @mousedown="toggle">|||</div>
     <div class="list">
       <NavigationItem :url="'about'"></NavigationItem>
       <NavigationItem :url="'abstracts'"></NavigationItem>
@@ -28,6 +28,9 @@ export default {
   }),
 
   methods: {
+    togglecolors () {
+      this.$store.commit('setcolors')
+    },
     toggle () {
       this.$store.commit('setnavigation')
       this.$store.commit('setcolors')
@@ -37,6 +40,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/scss/vars.scss';
+
   nav{
     position: fixed;
     left: 0;
@@ -45,11 +50,16 @@ export default {
     background: rgba(255, 255, 255, .3);
     text-align: center;
     width: 12em;
-    height: 3em;
+    height: 100%;
     left: -12em;
     transition: left .2s;
     &.navactive{
       transition: left .2s;
+      left: 0;
+    }
+    @include breakpoint-max(laptop) {
+      width: 100%;
+      height: 12em;
       left: 0;
     }
   }

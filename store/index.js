@@ -56,6 +56,9 @@ const store = () => {
       ]
     },
     mutations: {
+      closenav (state) {
+        state.navigation = false
+      },
       setnavigation (state, status) {
         if (status === 'change') state.navigation = false
         else state.navigation = !state.navigation
