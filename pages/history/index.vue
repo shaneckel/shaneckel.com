@@ -1,7 +1,7 @@
 <template>
   <section>
     <header class="intro-head content">
-      <h1>History</h1>
+      <h1>Work History</h1>
       <span class="sep"></span>
     </header>
     <div class="main content">

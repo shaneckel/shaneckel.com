@@ -93,48 +93,18 @@ a, a:hover, a:focus, a:visited {
   }
 }
 
-// .main-header{
-//   padding: 8em 0;
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-//   margin-left: 20%;
-//   margin-right: 10%;
-// }
-
-// .container{
-  // margin: 2em 0;
-  // padding: 6em 0;
-//   margin-bottom: 0;
-//   padding-bottom: 0;
-// }
-//
 .content{
   padding: $base-line-height;
-  @include breakpoint-min(desktop) {
-    padding: $base-line-height * 2;
+  @include breakpoint-min(laptop) {
+    padding: $base-line-height * 2 $base-line-height * 4 ;
     margin: $base-line-height auto;
     max-width: $full-width;
-  }
-  @include breakpoint-max(full){
-    margin: $base-line-height auto;
-  }
-  @include breakpoint-min(laptop) {
-    margin: $base-line-height * 2;
+    margin: $base-line-height * 2 auto;
   }
 }
 
 .display{
   @include breakpoint-min(desktop) {
-    margin: $base-line-height * 2 auto;
-    max-width: $max-width;
+    margin: $base-line-height  auto;
   }
 }
-//
-// .data-page{
-//   @include breakpoint-min(desktop) {
-//     margin-left: auto;
-//     margin-right: auto;
-//     max-width: $max-width;
-//   }
-// }

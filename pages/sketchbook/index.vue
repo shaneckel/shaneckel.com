@@ -4,7 +4,7 @@
       <h1>Sketchbook</h1>
       <span class="sep"></span>
     </header>
-    <div class="main">
+    <div class="main content">
       <p>sketchs</p>
     </div>
   </section>

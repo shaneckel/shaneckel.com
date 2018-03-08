@@ -5,8 +5,7 @@
       <span class="sep"></span>
       <h4>Creative Developer</h4>
     </header>
-    <div class="main">
-
+    <div class="main content">
     </div>
   </section>
 </template>

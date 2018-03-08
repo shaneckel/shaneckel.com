@@ -1,8 +1,12 @@
 <template lang="html">
   <div class="item" v-on:mouseover="mouseOver">
-    <p>
-      <nuxt-link :to="'/' + url">{{url}}</nuxt-link>
-    </p>
+    <section>
+      <h5>
+        <nuxt-link v-if="url === 'history'" :to="'/' + url">work history</nuxt-link>
+        <nuxt-link v-else-if="url === 'index'" :to="'/'">{{url}}</nuxt-link>
+        <nuxt-link v-else :to="'/' + url">{{url}}</nuxt-link>
+      </h5>
+    </section>
     <div class="color" :style="styledata"></div>
   </div>
 </template>
@@ -32,7 +36,7 @@ export default {
       return {
         'backgroundColor': hexToRgbA(this.$store.state.colors.find((item) => {
           return item.route === this.url
-        }).color_a, 0.25)
+        }).color_a, 0.9)
       }
     }
   },
@@ -46,22 +50,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  p {
+  @import '../assets/scss/vars.scss';
+
+  h5 {
     margin: 0;
     z-index: 20;
     position: relative;
+    padding: 0;
+    text-transform: uppercase;
     a{
-      padding: .5em;
       width: 100%;
       display: block;
+      padding: $base-line-height;
+      &:hover{
+        color:white;
+      }
     }
   }
   div.item {
     overflow: hidden;
     position: relative;
+    width: 100%;
+    transition: all .3s;
+    text-align: right;
     &:hover {
+      padding: $base-line-height 0;
+      transition: all .5s;
+      transition-delay: .3s;
       div.color {
-        transition: .2s;
+        transition: all .3s;
         opacity: 1;
       }
     }
@@ -74,6 +91,9 @@ export default {
     width: 100%;
     height: 100%;
     opacity: 0;
+    @include breakpoint-max(laptop) {
+      opacity: 1;
+    }
   }
 
 </style>
