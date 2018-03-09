@@ -19,11 +19,17 @@ module.exports = {
   css: [
     { src: '~assets/scss/main.scss', lang: 'scss' }
   ],
+  modules: [
+    '@nuxtjs/axios',
+  ],
+  plugins: [
+    '~/plugins/axios'
+  ],
+  axios: {
+    baseURL: `http://${process.env.HOST || 'localhost'}:${process.env.PORT || 3000}`
+  },
   loading: '~/components/Loading.vue',
   build: {
-    vendor: [
-      'axios'
-    ],
     extend (config, ctx) {
       if (ctx.isClient) {
         config.module.rules.push({

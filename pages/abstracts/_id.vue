@@ -5,7 +5,7 @@
       <span class="sep"></span>
     </header>
     <article class="main content">
-      <p>look. stuff</p>
+      <p>{{images}}</p>
     </article>
   </section>
 </template>
@@ -14,6 +14,10 @@
 import { TweenLite, Power3 } from 'gsap'
 
 export default {
+  async asyncData ({ app, params }) {
+    let images = await app.$axios.$get(`/api/abstracts/${params.id}`)
+    return { images }
+  },
   transition: {
     css: false,
     appear: true,
