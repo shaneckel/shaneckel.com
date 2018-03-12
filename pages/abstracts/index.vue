@@ -12,12 +12,12 @@
           </figure>
         </div>
         <div class="content">
-          <h2>Modern Untitled</h2>
-          <h4>2011 - 2014</h4>
+          <h3>Modern Untitled</h3>
+          <p class="year">2011 - 2014</p>
           <p>The development of these abstracts was primarly in exploration of design principles. Each took roughly a day to complete and go through many iterations. At some point, the work is done. Saved, flattened, and dated. Primarely for digital, but have been adapted for print.</p>
           <nuxt-link :to="'/abstracts/modern'">
-            <button class="btn" href="#">
-              <p>view collection</p>
+            <button class="btn-right" href="#">
+              <p>view</p>
               <span class="arrow">
                 <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
               </span>
@@ -32,12 +32,12 @@
           </figure>
         </div>
         <div class="content">
-          <h2>Incomplete</h2>
-          <h4>2007</h4>
+          <h3>Incomplete</h3>
+          <p>2007</p>
           <p>The development of these abstracts was primarly in exploration of design principles. Each took roughly a day to complete and go through many iterations. At some point, the work is done. Saved, flattened, and dated. Primarely for digital, but have been adapted for print.</p>
           <nuxt-link :to="'/abstracts/incomplete'">
-            <button class="btn" href="#">
-              <p>view collection</p>
+            <button class="btn-right" href="#">
+              <p>view</p>
               <span class="arrow">
                 <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
               </span>
@@ -53,11 +53,11 @@
         </div>
         <div class="content">
           <h3>Pittsburgh Bridges</h3>
-          <h4>2007</h4>
+          <p>2006 - 2007</p>
           <p>The development of these abstracts was primarly in exploration of design principles. Each took roughly a day to complete and go through many iterations. At some point, the work is done. Saved, flattened, and dated. Primarely for digital, but have been adapted for print.</p>
           <nuxt-link :to="'/abstracts/pittsburgh'">
-            <button class="btn" href="#">
-              <p>view collection</p>
+            <button class="btn-right" href="#">
+              <p>view</p>
               <span class="arrow">
                 <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
               </span>
@@ -73,11 +73,11 @@
         </div>
         <div class="content">
           <h3>Untitled</h3>
-          <h4>2003 - 2006</h4>
+          <p>2003 - 2006</p>
           <p>These abstracts were for exploration of the design elements & principles. Of the eighty renderings, each took roughly a day to complete through many iterations. At some point, the work is considered done. Saved, flattened, and dated. Primarily for digital, but have been adapted for print.</p>
           <nuxt-link :to="'/abstracts/untitled'">
-            <button class="btn" href="#">
-              <p>view collection</p>
+            <button class="btn-right" href="#">
+              <p>view</p>
               <span class="arrow">
                 <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
               </span>
@@ -143,6 +143,9 @@ article{
 .content > p{
   @include breakpoint-min(tablet) {
     max-width: 50%;
+  }
+  &.year{
+    font-style: italic;
   }
 }
 

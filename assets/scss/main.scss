@@ -12,7 +12,7 @@ html, body {
 
 html{
   min-height:100%;
-  background: #593b45;
+  // background: #593b45;
 }
 
 body {
@@ -60,40 +60,81 @@ a, a:hover, a:focus, a:visited {
 }
 
 
-.btn{
+.btn-right, .btn-left {
   height: 3em;
   border: 0;
-  box-shadow: 1px 1px 3px 1px rgba(51, 51, 51, 0.39);
-  transition: background .2s;
-  background-color: rgba(256, 256, 256, 0.25);
   cursor:pointer;
   outline: 0;
   display: inline-flex;
   align-items: center;
+  background: none;
   margin-top: $base-line-height;
+  font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B';
+  padding-left: 0;
+  color: #333;
   p{
+    text-transform: uppercase;
+    font-size: .8em;
+    letter-spacing: .1em;
+    font-weight: 900;
     padding: 0;
-    padding-left: 1em;
+    padding-left: 0em;
     line-height: 1em;
   }
   .arrow{
     width: 3em;
     height: 3em;
     position: relative;
-    padding: 1em;
+    padding: 1em 1em .8em 1em;
+    margin-left: 0em;
+    transition: margin-left .2s;
+    fill: #333;
   }
-  &:hover{
-    transition: background .2s;
-    background-color: rgba(256, 256, 256, 0.55);
+  &:hover .arrow{
+    margin-left: .4em;
+    transition: margin-left .2s;
   }
-  &:active{
-    box-shadow: 1px 1px 0px 1px rgba(51, 51, 51, 0.39);
-    top: 2px;
-    left: -5px;
+  &:active {
+    color: #ccc;
+    .arrow {
+      fill: #ccc;
+      transition: margin-left .2s;
+      margin-left: .6em;
+    }
+  }
+}
+
+.btn-left{
+  .arrow{
+    margin-right: 0;
+    transform: rotate(180deg);
+    left: -0.8em;
+    position: relative;
+    transition: left .2s;
+  }
+  &:active .arrow{
+    transition: left .2s;
+    margin-left: 0em;
+    left: -1.2em;
+  }
+  &:hover .arrow{
+    left: -1em;
+    margin-left: 0em;
+    transition: left .2s;
   }
 }
 
 .content{
+  padding: $base-line-height;
+  @include breakpoint-min(laptop) {
+    padding: $base-line-height * 2 $base-line-height * 4 ;
+    margin: $base-line-height auto;
+    max-width: $full-width;
+    margin: $base-line-height * 2 auto;
+  }
+}
+
+.content-secondary{
   padding: $base-line-height;
   @include breakpoint-min(laptop) {
     padding: $base-line-height * 2 $base-line-height * 4 ;
