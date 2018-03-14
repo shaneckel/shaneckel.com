@@ -3,12 +3,12 @@
     <div v-if="!$store.state.navigation" class="toggle" @mousedown="toggle"><span>|||</span></div>
     <div class="list" v-on:mouseleave="togglecolors">
       <NavigationItem :url="'index'"></NavigationItem>
-      <NavigationItem :url="'about'"></NavigationItem>
+      <!-- <NavigationItem :url="'about'"></NavigationItem> -->
       <NavigationItem :url="'abstracts'"></NavigationItem>
-      <NavigationItem :url="'projects'"></NavigationItem>
-      <NavigationItem :url="'history'"></NavigationItem>
-      <NavigationItem :url="'sketchbook'"></NavigationItem>
-      <NavigationItem :url="'writing'"></NavigationItem>
+      <!-- <NavigationItem :url="'projects'"></NavigationItem> -->
+      <!-- <NavigationItem :url="'history'"></NavigationItem> -->
+      <!-- <NavigationItem :url="'sketchbook'"></NavigationItem>
+      <NavigationItem :url="'writing'"></NavigationItem> -->
     </div>
     <div class="bgtoggle" @mousedown="toggle"></div>
   </nav>

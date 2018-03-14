@@ -39,19 +39,19 @@ const pittsburgh = [
     name: 'Clemente',
     year: '2008',
     description: 'The Roberto Clemente bridge was first built in 1819 and rebuilt several times over the years. An iconic social pittsburgh bridge, it represents a great deal for both sports and Pittsburgh history. I\'ve always loved what it stood for growing up.',
-    src: ASSET_PATH + IMG_FOLDER + 'abstract-pittsburgh2-2007.jpg'
+    src: ASSET_PATH + IMG_FOLDER + 'abstract-pittsburgh1-2007.jpg'
   },
   {
     name: 'Fort Wayne',
     year: '2006',
     description: 'The Fort Wayne Railroad Bridge, to me, is a good representation of Pittsburgh. Rusted and gritty but does the neccessary work.',
-    src: ASSET_PATH + IMG_FOLDER + 'abstract-pittsburgh1-2007.jpg'
+    src: ASSET_PATH + IMG_FOLDER + 'abstract-pittsburgh2-2007.jpg'
   }
 ]
 const incomplete = [
   {
     name: 'incomplete 6',
-    year: '',
+    year: '2007',
     description: '',
     src: ASSET_PATH + IMG_FOLDER + 'abstract-incomplete6-2007.jpg'
   },

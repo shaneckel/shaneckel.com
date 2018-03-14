@@ -14,7 +14,7 @@
         <div class="content">
           <h3>Modern Untitled</h3>
           <p class="year">2011 - 2014</p>
-          <p>The development of these abstracts was primarly in exploration of design principles. Each took roughly a day to complete and go through many iterations. At some point, the work is done. Saved, flattened, and dated. Primarely for digital, but have been adapted for print.</p>
+          <p>{{this.$store.state.abstract_descipt.modern}}</p>
           <nuxt-link :to="'/abstracts/modern'">
             <button class="btn-right" href="#">
               <p>view</p>
@@ -34,7 +34,7 @@
         <div class="content">
           <h3>Incomplete</h3>
           <p>2007</p>
-          <p>The development of these abstracts was primarly in exploration of design principles. Each took roughly a day to complete and go through many iterations. At some point, the work is done. Saved, flattened, and dated. Primarely for digital, but have been adapted for print.</p>
+          <p>{{this.$store.state.abstract_descipt.incomplete}}</p>
           <nuxt-link :to="'/abstracts/incomplete'">
             <button class="btn-right" href="#">
               <p>view</p>
@@ -54,7 +54,7 @@
         <div class="content">
           <h3>Pittsburgh Bridges</h3>
           <p>2006 - 2007</p>
-          <p>The development of these abstracts was primarly in exploration of design principles. Each took roughly a day to complete and go through many iterations. At some point, the work is done. Saved, flattened, and dated. Primarely for digital, but have been adapted for print.</p>
+          <p>{{this.$store.state.abstract_descipt.pittsburgh}}</p>
           <nuxt-link :to="'/abstracts/pittsburgh'">
             <button class="btn-right" href="#">
               <p>view</p>
@@ -74,7 +74,7 @@
         <div class="content">
           <h3>Untitled</h3>
           <p>2003 - 2006</p>
-          <p>These abstracts were for exploration of the design elements & principles. Of the eighty renderings, each took roughly a day to complete through many iterations. At some point, the work is considered done. Saved, flattened, and dated. Primarily for digital, but have been adapted for print.</p>
+          <p>{{this.$store.state.abstract_descipt.untitled}}</p>
           <nuxt-link :to="'/abstracts/untitled'">
             <button class="btn-right" href="#">
               <p>view</p>
@@ -94,6 +94,7 @@ import { TweenLite, Power3 } from 'gsap'
 
 export default {
   name: 'abstracts',
+
   transition: {
     css: false,
     appear: true,

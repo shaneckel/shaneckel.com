@@ -36,7 +36,7 @@ export default {
       return {
         'backgroundColor': hexToRgbA(this.$store.state.colors.find((item) => {
           return item.route === this.url
-        }).color_a, 0.9)
+        }).color_a, 0.6)
       }
     }
   },

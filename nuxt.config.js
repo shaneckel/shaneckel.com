@@ -23,10 +23,12 @@ module.exports = {
     '@nuxtjs/axios',
   ],
   plugins: [
-    '~/plugins/axios'
+    '~/plugins/axios',
+    { src: '~plugins/analytics.js', ssr: false }
   ],
   axios: {
-    baseURL: `http://${process.env.HOST || 'localhost'}:${process.env.PORT || 3000}`
+    baseURL: process.env.NODE_ENV === 'production' ? 'https://shaneckel.com' : 'http://localhost:3000'
+    // baseURL: `http://${process.env.HOST || 'localhost'}:${process.env.PORT || 3000}`
   },
   loading: '~/components/Loading.vue',
   build: {

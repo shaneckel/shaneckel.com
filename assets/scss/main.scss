@@ -70,8 +70,11 @@ a, a:hover, a:focus, a:visited {
   background: none;
   margin-top: $base-line-height;
   font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B';
-  padding-left: 0;
-  color: #333;
+  @include breakpoint-max(tablet) {
+    padding-left: 1em;
+    border: 1px solid black;
+  }
+
   p{
     text-transform: uppercase;
     font-size: .8em;
@@ -88,7 +91,7 @@ a, a:hover, a:focus, a:visited {
     padding: 1em 1em .8em 1em;
     margin-left: 0em;
     transition: margin-left .2s;
-    fill: #333;
+    // fill: #333;
   }
   &:hover .arrow{
     margin-left: .4em;

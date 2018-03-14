@@ -1,6 +1,55 @@
 <template>
   <section>
-    <header class="goback content">
+    <header class="content intro-head">
+      <h1>abstracts / {{title}}</h1>
+    </header>
+    <article class="main">
+      <section class="content" v-for="image in images">
+        <div class="info">
+          <span class="sep"></span>
+          <h3>{{image.name}}</h3>
+          <p class="year">{{image.year}}</p>
+          <p v-if="image.description">{{image.description}}</p>
+        </div>
+        <div class="image">
+          <img :src="image.src" />
+        </div>
+      </section>
+    </article>
+    <footer class="goback content">
+    <!-- <aside class="next-work content"> -->
+      <nuxt-link v-if="title != 'modern'" :to="'/abstracts/modern'">
+        <button class="btn-right" href="#">
+          <p>modern</p>
+          <span class="arrow">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+          </span>
+        </button>
+      </nuxt-link>
+      <nuxt-link v-if="title != 'incomplete'" :to="'/abstracts/incomplete'">
+        <button class="btn-right" href="#">
+          <p>incomplete</p>
+          <span class="arrow">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+          </span>
+        </button>
+      </nuxt-link>
+      <nuxt-link v-if="title != 'pittsburgh'" :to="'/abstracts/pittsburgh'">
+        <button class="btn-right" href="#">
+          <p>pittsburgh</p>
+          <span class="arrow">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+          </span>
+        </button>
+      </nuxt-link>
+      <nuxt-link v-if="title != 'untitled'" :to="'/abstracts/untitled'">
+        <button class="btn-right" href="#">
+          <p>untitled</p>
+          <span class="arrow">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+          </span>
+        </button>
+      </nuxt-link>
       <nuxt-link :to="'/abstracts'">
         <button class="btn-left" href="#">
           <span class="arrow">
@@ -9,50 +58,90 @@
           <p>back</p>
         </button>
       </nuxt-link>
-    </header>
-    <article class="main content">
-      <div v-for="image in images">
-        <h2>{{image.name}}</h2>
-        <p>{{image.year}}</p>
-        <p>{{image.description}}</p>
-        <img :src="image.src" />
-      </div>
-      <Print></Print>
-    </article>
+    </footer>
   </section>
 </template>
 
 <script>
 import { TweenLite, Power3 } from 'gsap'
-import Print from '~/components/PrintInquery.vue'
 
 export default {
-  components: {
-    Print
-  },
-  async asyncData ({ app, params }) {
+  async asyncData ({ app, params, store }) {
     let images = await app.$axios.$get(`/api/abstracts/${params.id}`)
-    return { images }
+    let info = store.state.abstract_descipt[params.id]
+    let title = params.id
+    return {
+      images,
+      info,
+      title
+    }
   },
   transition: {
     css: false,
     appear: true,
     beforeEnter (el) {
-      // TweenLite.set(el.querySelector('h1'), {opacity: 0, x: '-200px'})
-      TweenLite.set(el.querySelector('.goback'), {opacity: 0, x: '-200px'})
+      TweenLite.set(el.querySelector('.btn-left'), {opacity: 0, x: '-200px'})
+      TweenLite.set(el.querySelector('h1'), {opacity: 0, x: '-200px'})
+      TweenLite.set(el.querySelector('footer'), {opacity: 0, x: '-200px'})
       TweenLite.set(el.querySelector('.main'), {opacity: 0})
     },
     enter (el, done) {
-      // TweenLite.to(el.querySelector('h1'), 1, {opacity: 1, x: '0px', ease: Power3.easeOut}).delay(0.2)
-      TweenLite.to(el.querySelector('.goback'), 1, {opacity: 1, x: '0px', ease: Power3.easeOut}).delay(0)
-      TweenLite.to(el.querySelector('.main'), 1, {opacity: 1, ease: Power3.easeOut}).delay(0.2)
+      TweenLite.to(el.querySelector('.btn-left'), 1, {opacity: 1, x: '0px', ease: Power3.easeOut}).delay(0)
+      TweenLite.to(el.querySelector('h1'), 1, {opacity: 1, x: '0px', ease: Power3.easeOut}).delay(0.2)
+      TweenLite.to(el.querySelector('footer'), 1, {opacity: 1, x: '0px', ease: Power3.easeOut}).delay(0.4)
+      TweenLite.to(el.querySelector('.main'), 1, {opacity: 1, ease: Power3.easeOut}).delay(0.4)
       done()
     },
     leave (el, done) {
-      // TweenLite.to(el.querySelector('h1'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn})
-      TweenLite.to(el.querySelector('.goback'), 1, {opacity: 0, x: '-100px', ease: Power3.easeIn}).delay(0)
-      TweenLite.to(el.querySelector('.main'), 1, {opacity: 0, ease: Power3.easeIn, onComplete: done}).delay(0.2)
+      TweenLite.to(el.querySelector('.btn-left'), 1, {opacity: 0, x: '-100px', ease: Power3.easeIn}).delay(0)
+      TweenLite.to(el.querySelector('h1'), 1, {opacity: 0, x: '-100px', ease: Power3.easeIn}).delay(0)
+      TweenLite.to(el.querySelector('footer'), 1, {opacity: 0, x: '-100px', ease: Power3.easeIn}).delay(0)
+      TweenLite.to(el.querySelector('.main'), 1, {opacity: 0, ease: Power3.easeIn, onComplete: done}).delay(0)
     }
   }
 }
 </script>
+<style scoped lang="scss">
+@import '../../assets/scss/vars.scss';
+
+.main{
+  background: rgba(255, 255, 255, .4);
+}
+.main > section {
+  display: flex;
+  width: 100%;
+  padding-top: $base-line-height * 8;
+  @include breakpoint-max(tablet){
+    display: block;
+  }
+  .sep{
+    background: black;
+  }
+}
+
+footer a{
+  display: block;
+}
+
+.year{
+  font-style: italic;
+}
+
+.main .info{
+  width: 60%;
+  padding-right: $base-line-height * 4;
+  @include breakpoint-max(tablet){
+    width: 100%;
+  }
+}
+.main .image{
+  width: 100%;
+  @include breakpoint-max(tablet){
+    padding-top: $base-line-height * 2;
+  }
+  img{
+    box-shadow: .1rem .3rem .45rem rgba(0,0,0,.3);
+    width: 100%;
+  }
+}
+</style>
