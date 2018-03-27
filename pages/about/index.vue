@@ -1,11 +1,11 @@
 <template>
   <section>
     <header class="intro-head content">
-      <h1>About</h1>
+      <h1>Hello.</h1>
       <span class="sep"></span>
     </header>
     <main class="main content">
-      <p>Hello. I'm Shane. I do a lot of things. I write code. I design stuff. I help businesses. I raise children. I do husband stuff. I also greatly enjoy working with my hands. If you need anything from me, send me an email.</p>
+      <p>I'm Shane. I do a lot of things. I write code. I design stuff. I help businesses. I raise children. I do husband stuff. I also greatly enjoy working with my hands. If you need anything from me, send me an email.</p>
     </main>
   </section>
 </template>

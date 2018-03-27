@@ -25,7 +25,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import '../assets/scss/vars.scss';
 
 .loading-page {
   position: fixed;
@@ -43,6 +44,10 @@ export default {
   position: fixed;
   width: 2em;
   height: 2em;
+  @include breakpoint-max(laptop) {
+    width: 3em;
+    height: 3em;
+  }
   background: white;
   left: 0;
   /* margin: auto; */

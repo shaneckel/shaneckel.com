@@ -17,39 +17,6 @@
       </section>
     </article>
     <footer class="goback content">
-    <!-- <aside class="next-work content"> -->
-      <nuxt-link v-if="title != 'modern'" :to="'/abstracts/modern'">
-        <button class="btn-right" href="#">
-          <p>modern</p>
-          <span class="arrow">
-            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
-          </span>
-        </button>
-      </nuxt-link>
-      <nuxt-link v-if="title != 'incomplete'" :to="'/abstracts/incomplete'">
-        <button class="btn-right" href="#">
-          <p>incomplete</p>
-          <span class="arrow">
-            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
-          </span>
-        </button>
-      </nuxt-link>
-      <nuxt-link v-if="title != 'pittsburgh'" :to="'/abstracts/pittsburgh'">
-        <button class="btn-right" href="#">
-          <p>pittsburgh</p>
-          <span class="arrow">
-            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
-          </span>
-        </button>
-      </nuxt-link>
-      <nuxt-link v-if="title != 'untitled'" :to="'/abstracts/untitled'">
-        <button class="btn-right" href="#">
-          <p>untitled</p>
-          <span class="arrow">
-            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
-          </span>
-        </button>
-      </nuxt-link>
       <nuxt-link :to="'/abstracts'">
         <button class="btn-left" href="#">
           <span class="arrow">

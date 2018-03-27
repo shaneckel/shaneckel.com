@@ -5,26 +5,34 @@
       <span class="sep"></span>
     </header>
     <div class="main content">
-      <div class="component superior">
-        <h1>Superior Motors</h1>
-        <p>2014 - 2017</p>
-      </div>
-      <div class="component thick">
-        <h1>Thick Bikes</h1>
-        <p>2008 - 2017</p>
-      </div>
-      <div class="component gelman">
-        <h1>Gelman & Reisman</h1>
-        <p>2015 - 2016</p>
-      </div>
-      <div class="component eden">
-        <h1>Eden</h1>
-        <p>2012 - 2016</p>
-      </div>
-      <div class="component always">
-        <h1>Always Boardshop</h1>
-        <p>2010</p>
-      </div>
+      <nuxt-link :to="'/projects/superiormotors'">
+        <h2>Superior Motors
+          <span class="svg-arrow">
+            <svg viewBox="0 0 24 24" preserveAspectsvg-arrowRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+          </span>
+        </h2>
+      </nuxt-link>
+      <nuxt-link :to="'/projects/thickbikes'">
+        <h2>Thick Bikes
+          <span class="svg-arrow">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+          </span>
+        </h2>
+      </nuxt-link>
+      <nuxt-link :to="'/projects/gelmanreisman'">
+        <h2>Gelman & Reisman
+          <span class="svg-arrow">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+          </span>
+        </h2>
+      </nuxt-link>
+      <nuxt-link :to="'/projects/eden'">
+        <h2>Eden
+          <span class="svg-arrow">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+          </span>
+        </h2>
+      </nuxt-link>
     </div>
   </section>
 </template>
@@ -58,26 +66,37 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../../assets/scss/vars.scss';
 
+.svg-arrow{
+  width: .75em;
+  height: .75em;
+  display: inline-block;
+  position: relative;
+  transition: margin-left .2s;
+  position: relative;
+  top: 0.05em;
+  transition: left .2s;
+  left: 0em;
+}
+a{
+  display: block;
+  padding: $base-line-height 0;
+}
+a:hover{
+  color: white;
+  .svg-arrow{
+    transition: left .2s;
+    left: $base-line-height;
+    fill: white;
+  }
+}
+.content{
+  margin-top: 0;
+}
 .component{
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.superior{
-  background-image: url('~/assets/img/project-supmot-asset1.jpg');
-}
-.thick{
-  background-image: url('~/assets/img/project-thick-asset1.jpg');
-}
-.gelman{
-  background-image: url('~/assets/img/project-gelman-asset1.jpg');
-}
-.eden{
-  background-image: url('~/assets/img/project-eden-asset1.jpg');
-}
-.always{
-  background-image: url('~/assets/img/project-always-asset1.jpg');
 }
 </style>

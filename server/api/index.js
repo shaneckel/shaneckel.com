@@ -1,11 +1,11 @@
 import { Router } from 'express'
 
-import users from './users'
 import abstracts from './abstracts'
+import history from './history'
 
 const router = Router()
 
-router.use(users)
 router.use(abstracts)
+router.use(history)
 
 export default router
