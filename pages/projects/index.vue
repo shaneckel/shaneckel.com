@@ -4,36 +4,39 @@
       <h1>Projects</h1>
       <span class="sep"></span>
     </header>
-    <div class="main content">
-      <nuxt-link :to="'/projects/superiormotors'">
-        <h2>Superior Motors
-          <span class="svg-arrow">
-            <svg viewBox="0 0 24 24" preserveAspectsvg-arrowRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
-          </span>
-        </h2>
-      </nuxt-link>
-      <nuxt-link :to="'/projects/thickbikes'">
-        <h2>Thick Bikes
-          <span class="svg-arrow">
-            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
-          </span>
-        </h2>
-      </nuxt-link>
-      <nuxt-link :to="'/projects/gelmanreisman'">
-        <h2>Gelman & Reisman
-          <span class="svg-arrow">
-            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
-          </span>
-        </h2>
-      </nuxt-link>
-      <nuxt-link :to="'/projects/eden'">
-        <h2>Eden
-          <span class="svg-arrow">
-            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
-          </span>
-        </h2>
-      </nuxt-link>
+    <div class="main">
+      <div class="content">
+        <nuxt-link :to="'/projects/eden'">
+          <h2>Eden
+            <span class="svg-arrow">
+              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+            </span>
+          </h2>
+        </nuxt-link>
+        <nuxt-link :to="'/projects/superiormotors'">
+          <h2>Superior Motors
+            <span class="svg-arrow">
+              <svg viewBox="0 0 24 24" preserveAspectsvg-arrowRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+            </span>
+          </h2>
+        </nuxt-link>
+        <nuxt-link :to="'/projects/gelmanreisman'">
+          <h2>Gelman & Reisman
+            <span class="svg-arrow">
+              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+            </span>
+          </h2>
+        </nuxt-link>
+        <nuxt-link :to="'/projects/thickbikes'">
+          <h2>Thick Bikes
+            <span class="svg-arrow">
+              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+            </span>
+          </h2>
+        </nuxt-link>
+      </div>
     </div>
+
   </section>
 </template>
 
@@ -48,7 +51,7 @@ export default {
     beforeEnter (el) {
       TweenLite.set(el.querySelector('h1'), {opacity: 0, x: '-200px'})
       TweenLite.set(el.querySelector('.sep'), {opacity: 0, x: '-200px'})
-      TweenLite.set(el.querySelector('.main'), {opacity: 0, x: '-200px'})
+      TweenLite.set(el.querySelector('.main'), {opacity: 0})
     },
     enter (el, done) {
       TweenLite.to(el.querySelector('h1'), 1, {opacity: 1, x: '0px', ease: Power3.easeOut}).delay(0.2)
@@ -68,6 +71,9 @@ export default {
 <style scoped lang="scss">
 @import '../../assets/scss/vars.scss';
 
+.main{
+  background: rgba(255, 255, 255, .4);
+}
 .svg-arrow{
   width: .75em;
   height: .75em;
@@ -93,6 +99,9 @@ a:hover{
 }
 .content{
   margin-top: 0;
+  @include breakpoint-max(tablet) {
+    font-size: .75em;
+  }
 }
 .component{
   position: relative;

@@ -16,7 +16,7 @@ const store = () => {
         modern: 'Continued exploration of design elements and principles, but with a focus on rhythm. The main goal of this work was in the tangible end result. Iterating on the end paper result, instead of adapting from digital. Still a work in progress.',
         incomplete: 'The development of these abstracts was strictly an exploration of the design elements and principles. Stemming from a loose association to an arbitrary theme / abstraction. Primarily for digital, but a few have been adapted for print.',
         untitled: 'These abstracts were for exploration of the design elements & principles in only the digital space. Of the eighty odd renderings, each took roughly a day to complete through many iterations. At some point, the work is considered done. The work is flattened, saved, and dated. Primarily for digital, but a few have been adapted for print.',
-        pittsburgh: 'I\'ve always had an affinity for Pittsburgh. The culture, the mentality, the people, and especially it\'s architecture and layout. At any point of exploring this city you can find a perspective of a certain vantage point that can inspire design exploration. Spending time climbing bridges, I captured photographed lines and angles for these impressions. Still a work in progress.'
+        pittsburgh: 'I\'ve always had an affinity for Pittsburgh. The culture, the mentality, the people, and especially its architecture and layout. At any point of exploring this city you can find a perspective of a certain vantage point that can inspire design exploration. Spending time climbing bridges, I captured photographed lines and angles for these impressions. Still a work in progress.'
       },
       colors: [
         {

@@ -77,7 +77,7 @@ export default {
 .main > section {
   display: flex;
   width: 100%;
-  padding-top: $base-line-height * 8;
+  padding-top: $base-line-height * 2;
   @include breakpoint-max(tablet){
     display: block;
   }

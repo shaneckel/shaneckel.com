@@ -8,25 +8,26 @@
       <section class="collection">
         <div class="top-asset">
           <figure class="display">
-            <img src="/img/project_supmot1.jpg" alt="">
+            <img src="/img/project_eden1.jpg" alt="">
           </figure>
         </div>
         <div class="content">
           <h3>Eden</h3>
-          <p class="year">2011 - 2015</p>
-          <p>Designed and developed the website to have the same feel of being in Braddock at night by the Edgar Thomas steel plant.</p>
+          <p class="year">2011 - 2017</p>
+          <p>Eden was truly first of its kind in the city of Pittsburgh. A fine dining raw vegan restaurant. The sole founder, owner, and head chef of the restaurant created the concept to elevate vegan food to a level above casual eating. She's a genius in a kitchen. Her ability to construct dynamic and intricate plates using vegan ingredients is inspiring. On top of being a talented chef, she's a very talented artist. Which led to the importance of the branding and styling quality to never fall below the level that the chef was running at. From the sign out front, to the decor, to how the menu felt in your hands. It was all there to carry you to a dining experience that the talent in the back created from scratch.</p>
         </div>
       </section>
       <section class="collection">
         <div class="top-asset">
           <figure class="display">
-            <img src="/img/project_supmot2.jpg" alt="">
+            <img src="/img/project_eden2.jpg" alt="">
           </figure>
         </div>
         <div class="content">
-          <p>The visual concept, was a continued stemming from the work done on the branding. Which grew out of the beautiful lines found inside the original building. The website is on a consistent tilt and has a responsive overlay to focus attention on the center.</p>
-          <p>The technology was originally built in angular and node.js but was later migrated to nuxt, a ssr rendered library for vue.js. A link to the github repository is below. Hosted on Zeit.co's Now. The content of the website is managed by a 3rd party cms system.</p>
-          <a href="https://github.com/shaneckel/superiormotors15104">
+          <h3>Code</h3>
+          <p>A great deal of the web experience was focused on carrying the same experience with the menu to the web. Whether it be with a cellphone or a desktop. Each page had to sit with you and prepare you for a great meal.</p>
+          <p>Written in php with a json export to power Angular (1) application. The website evolved many times throughout the years, but it was always built with an eye on the details.</p>
+          <a href="https://github.com/shaneckel/edenpittsburgh">
             <button class="btn-right" href="#">
               <p>github</p>
               <span class="arrow">
@@ -39,11 +40,25 @@
       <section class="collection">
         <div class="top-asset">
           <figure class="display">
-            <img src="/img/project_supmot3.jpg" alt="">
+            <img src="/img/project_eden4.jpg" alt="">
           </figure>
+        </div>
+        <div class="content">
+          <h3>Print</h3>
+          <p>Eden changed their entire menu every season. So we created a unique menu and photography set every season. This allowed us to evolve the design iteratively, and not get locked into a specific theme. Our goal was to make our regular guests feel like we care about them, and that we appreciate their return. Also that we deliver food directly from local farms. The photography was taken with a macro lens with minimal lighting. After shooting, I would then explore lines and visual movement to create that season's theme.</p>
         </div>
       </section>
     </article>
+    <footer class="goback content">
+      <nuxt-link :to="'/projects'">
+        <button class="btn-left" href="#">
+          <span class="arrow">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+          </span>
+          <p>back</p>
+        </button>
+      </nuxt-link>
+    </footer>
   </section>
 </template>
 
@@ -82,19 +97,15 @@ export default {
   }
 
   .top-asset{
-    padding: $base-line-height * 4 0 $base-line-height 0;
+    padding: $base-line-height 0 $base-line-height 0;
     text-align: center;
     @include breakpoint-min(full){
-      padding: $base-line-height * 4
+      padding: $base-line-height $base-line-height * 4
     }
     img{
       box-shadow: .1rem .3rem .45rem rgba(0,0,0,.3);
       width: 100%;
     }
-  }
-  button{
-    padding-left: 0;
-    padding-right: 0;
   }
 
   .content > p{

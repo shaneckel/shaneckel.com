@@ -14,7 +14,7 @@
         <div class="content">
           <h3>Thick Bikes</h3>
           <p class="year">2009 - 2018</p>
-          <p>thick bikes info</p>
+          <p>The style for Thick is driven by the owner's overwhelmingly creative approach to the structured practice of steel work. This ability to be pragmatic and creative has been translated into the business. It's an well running business that maintains a personality. The motivation behind the creative work has always been to preserve the shops personality while showing off how great the shop is.</p>
           <a href="https://thickbikes.com">
             <button class="btn-right" href="#">
               <p>thickbikes.com</p>
@@ -25,7 +25,47 @@
           </a>
         </div>
       </section>
+      <section class="collection">
+        <div class="top-asset">
+          <figure class="display">
+            <img src="/img/project_thick2.jpg" alt="">
+          </figure>
+        </div>
+        <div class="content">
+          <h3>Code</h3>
+          <p>The website has been rebuilt probably four times in the past nine years. We're currently running a nuxt ssr application that is hosted on Zeit.</p>
+          <a href="https://github.com/shaneckel/thickbikes.com">
+            <button class="btn-right" href="#">
+              <p>github</p>
+              <span class="arrow">
+                <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+              </span>
+            </button>
+          </a>
+        </div>
+      </section>
+      <section class="collection">
+        <div class="top-asset">
+          <figure class="display">
+            <img src="/img/project_thick3.jpg" alt="">
+          </figure>
+        </div>
+        <div class="content">
+          <h3>Print</h3>
+          <p>The shop's personality translates into a voice that is carried in every piece of media. It's a tricky balance between colloquial self analysis and reassuring the customer of the talents and versatility the bike shop has to offer. Always being read with a smile, but planted firmly in professionality.</p>
+        </div>
+      </section>
     </article>
+    <footer class="goback content">
+      <nuxt-link :to="'/projects'">
+        <button class="btn-left" href="#">
+          <span class="arrow">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+          </span>
+          <p>back</p>
+        </button>
+      </nuxt-link>
+    </footer>
   </section>
 </template>
 
@@ -64,21 +104,16 @@ export default {
   }
 
   .top-asset{
-    padding: $base-line-height * 4 0 $base-line-height 0;
+    padding: $base-line-height 0 $base-line-height 0;
     text-align: center;
     @include breakpoint-min(full){
-      padding: $base-line-height * 4
+      padding: $base-line-height $base-line-height * 4
     }
     img{
       box-shadow: .1rem .3rem .45rem rgba(0,0,0,.3);
       width: 100%;
     }
   }
-  button{
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   .content > p{
     @include breakpoint-min(tablet) {
       max-width: 50%;

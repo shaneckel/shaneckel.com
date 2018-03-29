@@ -14,8 +14,8 @@
         <div class="content">
           <h3>Superior Motors</h3>
           <p class="year">2014 - 2018</p>
-          <p>The branding came out of researching the history of U.S. Steel, Braddock, and Pittsburgh. A great deal of branding was purpose driven. No cruft. It was stamped onto a piece of steel and sent down the Monongahela.</p>
-          <p>The original styleguide design was sparked by a night in Braddock by the Edgar Thomas steel plant. A blend of dark blues and muted oranges.</p>
+          <p>The branding came out of researching the history of U.S. Steel, Braddock, and Pittsburgh. A great deal of branding back then was purpose driven. No cruft. It was stamped onto a piece of steel and sent down the Monongahela.</p>
+          <p>The original style guide design was sparked by a night in Braddock by the Edgar Thomas steel plant. A blend of dark blues and muted oranges.</p>
           <p>I had the opportunity of spending a good deal of time in Braddock during the development of this project. It's clear that the opening of Superior Motors is a reflection of the people of Braddock's will to grow. But for me, it's a testimony to the truly unnerving vision and strength of Kevin Sousa.</p>
           <a href="https://superiormotors15104.com">
             <button class="btn-right" href="#">
@@ -34,8 +34,9 @@
           </figure>
         </div>
         <div class="content">
-          <p>The visual concept, was a continued stemming from the work done on the branding. Which grew out of the beautiful lines found inside the original building. The website is on a consistent tilt and has a responsive overlay to focus attention on the center.</p>
-          <p>The technology was originally built in angular and node.js but was later migrated to nuxt, a ssr rendered library for vue.js. A link to the github repository is below. Hosted on Zeit.co's Now. The content of the website is managed by a 3rd party cms system.</p>
+          <h3>Code</h3>
+          <p>The visual concept was a continued stem from the work done on the branding. Which grew out of the beautiful lines found inside the original building. The website is on a consistent tilt and has a responsive overlay at large sizes to focus attention on the center.</p>
+          <p>The technology was originally built in angular and node.js but was later migrated to nuxt, a ssr rendered library for vue.js. A link to the github repository is below. Hosted on Zeit.co's Now  and the content of the website is managed by a 3rd party cms system.</p>
           <a href="https://github.com/shaneckel/superiormotors15104">
             <button class="btn-right" href="#">
               <p>github</p>
@@ -53,10 +54,21 @@
           </figure>
         </div>
         <div class="content">
-          <p>The source material for the line work came from an experimentation in a 3d modelling appplication. Rendereding a model with just lines created this almost chaotic engineering feel. Which, to me, is a good description of Kevin's food. It feels chaotic and spontanous, but has a meticulous engineering quality to the constuction. A meeting of left / right brain that is the best aspects of any expression.</p>
+          <h3>Print</h3>
+          <p>The source material for the line work came from an experimentation in a 3d modelling application. Rendering a model with just lines created this almost chaotic engineering feel. Which, to me, is a good description of Kevin's food. It feels chaotic and spontaneous, but has a meticulous engineering quality to the construction. A meeting of left / right brain that is the best aspects of any expression.</p>
         </div>
       </section>
     </article>
+    <footer class="goback content">
+      <nuxt-link :to="'/projects'">
+        <button class="btn-left" href="#">
+          <span class="arrow">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></g></svg>
+          </span>
+          <p>back</p>
+        </button>
+      </nuxt-link>
+    </footer>
   </section>
 </template>
 
@@ -95,19 +107,15 @@ export default {
   }
 
   .top-asset{
-    padding: $base-line-height * 4 0 $base-line-height 0;
+    padding: $base-line-height 0 $base-line-height 0;
     text-align: center;
     @include breakpoint-min(full){
-      padding: $base-line-height * 4
+      padding: $base-line-height $base-line-height * 4
     }
     img{
       box-shadow: .1rem .3rem .45rem rgba(0,0,0,.3);
       width: 100%;
     }
-  }
-  button{
-    padding-left: 0;
-    padding-right: 0;
   }
 
   .content > p{

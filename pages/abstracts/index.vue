@@ -130,10 +130,10 @@ article{
 }
 
 .top-asset{
-  padding: $base-line-height * 4 0 $base-line-height 0;
+  padding: $base-line-height 0 $base-line-height 0;
   text-align: center;
   @include breakpoint-min(full){
-    padding: $base-line-height * 4
+    padding: $base-line-height $base-line-height * 4
   }
   img{
     box-shadow: .1rem .3rem .45rem rgba(0,0,0,.3);

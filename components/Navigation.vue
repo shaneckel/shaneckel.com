@@ -7,7 +7,7 @@
       <NavigationItem :url="'abstracts'"></NavigationItem>
       <NavigationItem :url="'projects'"></NavigationItem>
       <NavigationItem :url="'history'"></NavigationItem>
-      <!-- <NavigationItem :url="'sketchbook'"></NavigationItem> -->
+      <NavigationItem :url="'sketchbook'"></NavigationItem>
       <!-- <NavigationItem :url="'writing'"></NavigationItem> -->
     </div>
     <div class="bgtoggle" @mousedown="toggle"></div>

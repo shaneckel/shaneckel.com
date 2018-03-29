@@ -3,16 +3,18 @@
     <header class="intro-head content">
       <h1>Work History</h1>
       <span class="sep"></span>
+      <h3>My goal is to create value, solve issues, and deliver results.</h3>
     </header>
     <div class="main content">
       <article class="years" v-for="year in years">
         <h2>{{year}}</h2>
-        <div class="project" v-if="year == getYear(project.date)" v-for="project in data">
+        <div class="project" v-if="year.toString() === getYear(project.date)" v-for="project in data">
           <section class="project-topbar">
             <div>
               <div class="box code" v-if="project.code === 'TRUE'"><span>code</span></div>
               <div class="box design" v-if="project.design === 'TRUE'"><span>design</span></div>
               <div class="box fulltime" v-if="project.fulltime === 'TRUE'"><span>fulltime</span></div>
+              <div class="box"><span>{{getDayMonth(project.date)}}</span></div>
             </div>
             <div>
               <div class="box link" v-if="project.project_link"><nuxt-link :to="project.project_link">view</nuxt-link></div>
@@ -21,12 +23,12 @@
             </div>
           </section>
           <section>
-            <h6 class="client">{{project.client}}</h6>
             <p class="information">
-              <span class="date">{{getDayMonth(project.date)}}</span>
+              <span class="client">{{project.client}}</span>
               <span class="space">—</span>
-              <span class="project_info">{{project.project}}. </span>
-              <span> {{project.description}}</span>
+              <span class="project_info">{{project.project}}</span>
+              <span class="space">—</span>
+              <span>{{project.description}}</span>
             </p>
           </section>
           <section>
@@ -58,16 +60,19 @@ export default {
     beforeEnter (el) {
       TweenLite.set(el.querySelector('h1'), {opacity: 0, x: '-200px'})
       TweenLite.set(el.querySelector('.sep'), {opacity: 0, x: '-200px'})
+      TweenLite.set(el.querySelector('h3'), {opacity: 0, x: '-200px'})
       TweenLite.set(el.querySelector('.main'), {opacity: 0})
     },
     enter (el, done) {
       TweenLite.to(el.querySelector('h1'), 1, {opacity: 1, x: '0px', ease: Power3.easeOut}).delay(0.2)
       TweenLite.to(el.querySelector('.sep'), 1, {opacity: 1, x: '0px', ease: Power3.easeOut}).delay(0.4)
+      TweenLite.to(el.querySelector('h3'), 1, {opacity: 1, x: '0px', ease: Power3.easeOut}).delay(0.6)
       TweenLite.to(el.querySelector('.main'), 1, {opacity: 1, ease: Power3.easeOut, onComplete: done}).delay(0.6)
     },
     leave (el, done) {
       TweenLite.to(el.querySelector('h1'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn})
       TweenLite.to(el.querySelector('.sep'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn}).delay(0.2)
+      TweenLite.to(el.querySelector('h3'), 1, {opacity: 0, x: '100px', ease: Power3.easeIn}).delay(0.4)
       TweenLite.to(el.querySelector('.main'), 1, {opacity: 0, ease: Power3.easeIn, onComplete: done}).delay(0.4)
     }
   },
@@ -97,7 +102,7 @@ export default {
       return format(arg, 'YYYY')
     },
     getDayMonth (arg) {
-      return format(arg, 'M.DD.YYYY')
+      return format(arg, 'M/DD')
     }
   }
 }
@@ -114,6 +119,10 @@ export default {
     padding-bottom: $base-line-height *2;
   }
 
+  .fulltime{
+    color: lighten(#8a451d, 60%)
+  }
+
   .project{
     padding: $base-line-height / 2;
     transition: background .8s;
@@ -123,6 +132,7 @@ export default {
     }
 
   }
+
   .project:hover{
     background: rgba(255, 255, 255, .1);
     transition: background .2s;
@@ -135,7 +145,7 @@ export default {
     color: #8a451d;
     border-bottom: 1px dotted;
     display: flex;
-    font-size: .8em;
+    font-size: .85em;
     justify-content: space-between;
   }
 
@@ -148,7 +158,7 @@ export default {
   }
 
   .client{
-    font-weight: 500;
+    font-weight: 800;
   }
 
   .project_info {
