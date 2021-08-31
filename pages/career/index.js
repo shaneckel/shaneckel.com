@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion'
 import CareerData from '../../data/career';
 import CareerList from '../../components/CareerList';

@@ -1,6 +1,6 @@
 
 import CareerContainer from '../../components/CareerContain'
-import { Box, Text, Image } from '../../components/Common'
+import { Box, Text, ImageContainer } from '../../components/Common'
 import { Theme } from '../../components/Theme'
 
 const Carnegie = () => (
@@ -25,7 +25,7 @@ const Carnegie = () => (
       maxWidth={Theme.Breakpoints.lg}
       m='auto'
     >
-      <Image width='100%' src='/images/career/carnegie_header.jpg' />
+      {/* <ImageContainer width='' src='/images/career/carnegie_header.jpg' /> */}
     </Box>
     <Box 
       m={[0, null, null, 4]}

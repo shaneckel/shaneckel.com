@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { css, jsx } from '@emotion/react'
 import { useState, useRef } from 'react';
 import NavLinks from './Nav-links'
@@ -29,13 +28,11 @@ const Header = () => {
           fontSize={2} 
           pt={2} 
           as='h1'
-          css={css`
-            cursor: pointer;
-            width: 80px;
-            &:hover{
-              color ${Theme.colors.link}
-            }
-          `}
+          style={{
+            'cursor': 'pointer',
+            'width': '80px'
+          }}
+
         >
           shane.
         </Text>

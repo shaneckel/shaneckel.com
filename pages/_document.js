@@ -1,8 +1,8 @@
-import Document, { Head, Main, NextScript } from 'next/document'
+import Document, {Html, Head, Main, NextScript } from 'next/document'
 import { extractCritical } from '@emotion/server'
 
 export default class MyDocument extends Document {
-  static getInitialProps({ renderPage }) {
+  static async getInitialProps({ renderPage }) {
     const page = renderPage()
     const styles = extractCritical(page.html)
     return { ...page, ...styles }
@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <Html>
         <Head>
           <style
             data-emotion-css={this.props.ids.join(' ')}
@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }

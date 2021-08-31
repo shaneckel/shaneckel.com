@@ -3,71 +3,83 @@
     "id": 1,
     "title": "Version 2",
     "date": "2020",
-    "description": "After spending hours staring at a computer terminal, everything is either lined up or not. I understand that, but also really don't give a shit about it. There's a world where you can have expressive life framed in logical structure. Subdued but still interesting. I'm slowing down, but remaining myself. I'm going to continue to explore this visual language for as long as I can manage."
+    "height": 533,
+    "description": "After spending hours staring at a computer terminal, everything is either lined up or not. I understand that, but also know that obsessing can lead to work that is stifling and containing. There's a world where you can have expressive life framed in logical structure. Subdued but still interesting. Slowed down, but remaining interesting. Still Exploring this visual language for as long as I can manage."
   },  
   {
     "id": 2,
     "title": "Untitled 7",
     "date": "2014",
+    "height": 1650,
     "description": "This always resonated with me. The tall 2/3rds layout. The circle emphasis with a secondary crawling design. The red punching out while some how fighting for attention with the blue. Could be why this was the last I did for several years. The rendering is fairly old. It came from the background I used for a cinematographer's website."
   },  
   {
     "id": 3,
     "title": "Untitled 5",
     "date": "2010",
+    "height": 900,
     "description": "There's a few traits I fell in love with here. First is using noise to diffuse gradients and create more depth of field. The second is trying to establish a stronger sense of visual depth. Depth in any piece is what takes something from good to great. This also was when I decided to start at print sizes and work only in print sizes going forward. 300dpi to start. It feels unfinished, but it still represents a lot to me."
   },  
   {
     "id": 4,
     "title": "Incomplete 4",
     "date": "2007",
+    "height": 672,
     "description": "Each 'Incomplete' was an attempt at incorporating found photographed textures from my time in the world. For instance, the red grittiness on the right side is actually rust from a old piece of steel off the Fort Wayne Bridge. Is it important that it's that specific bridge, with that specific panel. Maybe not visually, but it does to me personally. Which is sometimes the work. Incorporating myself into what is already visually appealing."
   },  
   {
     "id": 5,
     "title": "Incomplete 2",
     "date": "2007",
+    "height": 672,
     "description": "Challenging how far you can drag a composition until it no longer feels right. Turns out you can stuff your emphasis into a corner as long as you visually walk it out. Spent a lot of time trying to figure out how to make tranquility ecstatic and interesting."
   },  
   {
     "id": 6,
     "title": "Incomplete 6",
     "date": "2007",
+    "height": 672,
     "description": "As mentioned earlier, 'Incomplete' had photographed elements of found textures. For instance, I worked at an advertising agency at this time. They were throwing test paper used in the 80's for design treatments. So I took the opportunity to pull them from the trash and photograph the textures of each. Another element I enjoyed from this was sacrificing arguably the most interesting element to mostly texture and having the composition still work."
   },  
   {
     "id": 7,
     "title": "Andy Warhol Bridge",
     "date": "2006",
+    "height": 672,
     "description": "Pittsburgh has a lot of bridges. Even the most basic has a sort of line or movement. My goal was to accumulate photographed elements of each specific bridge to create a nonobjective abstract. They have nothing to do with the bridge. Except being composited using what was found only on of bridge. Would still like to revisit this concept."
   },  
   {
     "id": 8,
     "title": "Background 80",
     "date": "2006",
+    "height": 672,
     "description": "I had a short stint of using flat colors and shapes that is probably worth revisiting. Everything is something because it's against something else. You feel the grid more because of the center. You feel the emphasis more because of the pattern. This felt like a regression so I felt like I was ready to wait to see what came next."
   },  
   {
     "id": 9,
     "title": "Background 79",
     "date": "2005",
+    "height": 672,
     "description": "Spent a lot of time in a 3d rendering software. Applying objective characteristics to a nonobjective abstract for visual 'depth'. Dragging the viewer forward and back, left and right, but also in and out is the fun. 3d elements offer expression in a way that is difficult to achieve from using flat elements."
   },  
   {
     "id": 10,
     "title": "Background 75",
     "date": "2005",
+    "height": 672,
     "description": "A shape I felt worth of framing. The colors were defined in the rendering. Outside of minor tweaking and framing this felt completed. A continuation of attempting to blend flat elements with modeled elements. This was also the first time seeing a digital piece properly printed. It changed my motivation going forward to keep in mind that this work could live outside of a computer."
   },
   {
     "id": 11,
     "title": "Background 71",
     "date": "2004",
+    "height": 672,
     "description": "This was an iterative learning experience. There are 75 other attempts that predate this which led to my comfort with using a computer for generating work. Layering textures to enhance the sharpness and create drama and movement was grabbed my interest in this."
   },
   {
     "id": 12,
     "title": "sketchbook",
+    "height": 0,
     "description": ""
   }  
 ]

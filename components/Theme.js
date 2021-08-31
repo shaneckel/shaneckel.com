@@ -1,15 +1,17 @@
 import { css, Global } from '@emotion/react'
+import { color } from 'styled-system'
 
 const colors = {
-  background: "#5d5d5d",
-  background_light: "#656565",
+  background: "#c7c7c7",
+  background_light: "#bbbbbb",
   background_dark: "#4e4e4e",
   red: "#4e4e4e",
   primary: '#423EA2',
-  link: '#dcdcdc',
+  link: '#5d5d5d',
   link_highlight: '#bebec1',
   heading: '#423EA2',
-  text: '#c7c7c7'
+  text_light: '#949494',
+  text: '#5d5d5d'
 }
 
 const fontSizes = [ 
@@ -45,6 +47,15 @@ export const Theme = {
       hover: {
         scale: 0.96 
       }
+    },        
+    flip: {
+
+      hover: {
+        x: 8,
+        transition: { 
+          duration: .1
+        }
+      }
     },    
     soft_hover: {
       hover: {
@@ -54,23 +65,37 @@ export const Theme = {
     default: {
       initial: { 
         y: 5, 
-        opacity: 0 
+        opacity: .5 
       },
       enter: { 
         y: 0, 
-        opacity: 1, 
-        transition: { 
-          duration: 0.5 
-        } 
+        opacity: 1 
       },
       exit: { 
         y: 5, 
-        opacity: 0,  
+        opacity: .5
+      }
+    },       
+    list: {
+      initial: { 
+        opacity: .2,
+        x: -10
+      },
+      enter: { 
+        opacity: 1,
+        x: 0, 
         transition: { 
-          duration: 0.25 
+          duration: .35 
+        } 
+      },
+      exit: {
+        x: 10, 
+        opacity: .2,  
+        transition: { 
+          duration: .35
         } 
       }
-    },    
+    },        
     navigation: {
       initial: { 
         opacity: 0 
@@ -119,6 +144,10 @@ export const GlobalStyles = (
       }
       img {
         max-width: 100%;
+      }
+      .image-styles {
+        border-radius: 16px;
+        cursor:pointer;
       }
     `}
   />

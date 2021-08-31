@@ -10,6 +10,7 @@ const client = Prismic.client('https://shaneckel.cdn.prismic.io/api/v2')
 
 const Write = (props) => {
   const { article } = props;
+  const page = props.page || 1
 
   return (
     <motion.div       
@@ -22,7 +23,7 @@ const Write = (props) => {
         maxWidth={Theme.Breakpoints.md}
         m='auto' 
       >
-        <Link href='/writing'><Text fontSize={0} href='/writing' as='a'>{`< back to writings`}</Text></Link>
+        <Link href={`/writing?p=${page}`}><Text fontSize={0} href={`/writing?p=${page}`} as='a'>{`< back to writings`}</Text></Link>
       </Box>
       <Box
         maxWidth={Theme.Breakpoints.md}
@@ -40,11 +41,12 @@ const Write = (props) => {
 
 Write.getInitialProps = async (context) => {
   const { write } = context.query
+  const page = context.query.p
   const article = await client.getByUID('writings', write)
   if (context.res) {
     context.res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate')
   }
-  return { article }
+  return { article, page }
 }
 
 

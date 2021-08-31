@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { css, jsx } from '@emotion/react'
 import DeskHeader from './DeskHeader';
 import MobileHeader from './MobileHeader';
@@ -26,14 +25,14 @@ const Layout = ({ children }) => {
         position={['inherit','fixed']}
         zIndex='10'
         pt={[null, shadow ? 1 : 5]}
-        bg={[null, shadow ? 'red' : 'background']}
+        bg={[null, shadow ? 'background' : 'background']}
         width='100%'
         borderTop='4px solid'
         borderColor='red' 
         boxShadow={[null, shadow ? Theme.shadow.main : null]}
-        css={css`
-          transition: all 500ms ease;
-        `}
+        style={{
+          'transition': 'all 380ms ease'
+        }}          
       >
         <motion.div       
           initial="initial"
@@ -44,8 +43,8 @@ const Layout = ({ children }) => {
           <Header
             maxWidth={Theme.Breakpoints.md} 
             m='auto'
-            pl={[4, 6]}
-            pr={[4, 6]}
+            pl={[4, 5, 6]}
+            pr={[4, 5, 6]}
             as='header'
           >
           {
@@ -59,14 +58,14 @@ const Layout = ({ children }) => {
       <Box pt={[2, 6]}>
         <Box
           m='auto'
-          p={[ 4, 6 ]}
+          p={[ 4, 5, 6 ]}
           as='main'
         >
           {children}
         </Box>   
       </Box>
       <Box 
-        p={[4, 6]} 
+        p={[4, 5, 6]} 
         m='auto'
         as='footer'
       >

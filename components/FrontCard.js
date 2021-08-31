@@ -1,9 +1,9 @@
-/** @jsx jsx */
 import { css, jsx } from '@emotion/react'
 import { motion } from 'framer-motion'
-import { Text, Box, Image } from './Common'
+import { Text, Box, ImageContainer } from './Common'
 import Link from 'next/link'
 import { Theme } from './Theme'
+import { borderRadius } from 'styled-system'
 
 const FrontCard = (props) => {
   const { image, url, urlas, info } = props
@@ -14,9 +14,9 @@ const FrontCard = (props) => {
     >
       <Box 
         flex='1 0 40%' 
-        width={[1, 1, null, 1/2]} 
+        width={[1, 1, 1, 1/2]} 
         bg='background'
-        m={[0, null, null, 4]}
+        m={[0, null, 2, 4]}
         mb={[4, 4, 4, null]}
         pb={[5, 4, null]}
         css={css`cursor: pointer;`}
@@ -25,11 +25,13 @@ const FrontCard = (props) => {
           <motion.div 
             whileHover="hover" 
             variants={Theme.transition.hover}
-            >
-            <Image
-              boxShadow={Theme.shadow.main} 
-              src={image}
-              borderRadius={['16px', 0, 0, '16px' ]}
+          >
+            <ImageContainer
+              src={`/images/${image}`}
+              width='700'
+              height='551'
+              className='image-styles'
+              priority={props.priority || 'false'}
             />
           </motion.div>
           <Text fontSize={0}>{info}</Text>

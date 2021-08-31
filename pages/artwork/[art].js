@@ -1,9 +1,8 @@
-/** @jsx jsx */
 import { css, jsx } from '@emotion/react'
 import Link from 'next/link'
 import ArtData from '../../data/art'
 import { motion } from 'framer-motion'
-import { Box, Flex, Text, Image } from '../../components/Common'
+import { Box, Flex, Text, ImageContainer } from '../../components/Common'
 import { Theme } from '../../components/Theme'
 
 const Art = ({ art }) => {
@@ -15,6 +14,7 @@ const Art = ({ art }) => {
       animate="enter"
       exit="exit"
       variants={Theme.transition.default}
+      key={art.title}
     >
         <Box 
           m={[0, null, null, 4]}
@@ -49,8 +49,12 @@ const Art = ({ art }) => {
                   mb={[1, 2, 2, null]}
                   pb={[1, 2, null]}
                 >
-                  <Image
+                  <ImageContainer
                     src={`/images/sketch/${idx}.jpg`}
+                    width='700'
+                    height='551'
+                    priority={(idx < 2) ? true : false }
+
                   />
                 </Box>
               )
@@ -58,7 +62,28 @@ const Art = ({ art }) => {
           }   
 
         </Flex>
-      
+        <Flex 
+          display='flex'
+          maxWidth={Theme.Breakpoints.md}
+          m='auto'
+          pb={3}
+          borderTop='1px solid'
+          mt={3}
+        >
+        <Box 
+          flex='50%' 
+          width={1/2} 
+        > 
+          <Link href={`/../artwork/${art.id === 1 ? ArtData.length : art.id - 1 }`}><Text fontSize={0} href='/artwork' as='a'>{`< prev`}</Text></Link>
+        </Box>
+        <Box 
+          flex='50%' 
+          width={1/2} 
+          textAlign='right'
+        > 
+          <Link href={`/../artwork/${ArtData.length === art.id ? 1 : art.id + 1 }`}><Text fontSize={0} href='/artwork' as='a'>{`next >`}</Text></Link>
+        </Box>
+      </Flex>
     </motion.div>
   )
   : 
@@ -68,6 +93,8 @@ const Art = ({ art }) => {
       animate="enter"
       exit="exit"
       variants={Theme.transition.default}
+      key={art.title}
+
     >
       <Box
         maxWidth={Theme.Breakpoints.md}
@@ -100,14 +127,17 @@ const Art = ({ art }) => {
           mb={[4, 3]}
           pl={[0, '8px']}
         >
-          <Image
+          <ImageContainer
             src={`/images/art/art_${art.id}w.jpg`}
+            width='700'
+            height='551'
+            priority='true'
           />
         </Box>
       </Flex>
       <Flex 
         display={['block', 'flex']}
-        maxWidth={Theme.Breakpoints.md}
+        maxWidth={Theme.Breakpoints.lg}
         m='auto'
         flexWrap='wrap'
       >
@@ -117,9 +147,13 @@ const Art = ({ art }) => {
           width={[1, 1, null, 1/2]} 
           bg='background'
           mb={[4, 3]}
-          mr={[0, '4px']}
         > 
-          <Image src={`/images/art/art_${art.id}ma.jpg`} />
+          <ImageContainer 
+            src={`/images/art/art_${art.id}ma.jpg`} 
+            width='700'
+            height='551'
+            priority='true'
+          />
         </Box>
         <Box 
           fontSize='0px'
@@ -127,9 +161,13 @@ const Art = ({ art }) => {
           width={[1, 1, null, 1/2]} 
           bg='background'
           mb={[4, 3]}
-          ml={[0, '4px']}
         > 
-          <Image src={`/images/art/art_${art.id}mb.jpg`} />
+          <ImageContainer 
+            src={`/images/art/art_${art.id}mb.jpg`} 
+            width='700'
+            height='551'
+            priority='true'
+          />
         </Box>
       </Flex>
       <Box>
@@ -138,7 +176,11 @@ const Art = ({ art }) => {
           bg='background'
           m='auto'
         >
-          <Image src={`/images/art/art_${art.id}l.jpg`} />
+          <ImageContainer 
+            src={`/images/art/art_${art.id}l.jpg`} 
+            width='840'
+            height={art.height}
+          />
         </Box>
       </Box>
       <Flex 

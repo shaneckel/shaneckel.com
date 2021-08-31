@@ -1,8 +1,18 @@
 [
   {
     "fulltime": true,
+    "project": "full stack / design / branding",
+    "date": "6/21/2021",
+    "client": "40 North",
+    "description": "Built a Next.js website. Branded and designed the language of the business.",
+    "external_link": "http://www.40northpgh.com/",
+    "project_link": "",
+    "github": ""
+  }, 
+  {
+    "fulltime": true,
     "project": "senior fullstack engineer",
-    "date": "5/15/2020",
+    "date": "5/15/2021",
     "client": "Bessemer Alliance",
     "description": "Hired to lead and replatform a web & iOS application migration to React Native and Vue.js. Migrated from Heroku to Google Cloud. Moved from a MongoDb to Google Firebase's Firestore, in order to leverage offline and realtime updates. Set up an internal management system and continue to build out features that focus primarily on Artificial Intelligence, Natural-Language Processing, and Machine Learning to allow users to get insights into businesses looking to learn more about their hidden potential.",
     "external_link": "http://www.bessemeralliance.com/",
@@ -29,49 +39,7 @@
     "description": "Under the lead of Andrew Moore, I was hired to architect and implement a fundamentally new approach to a college campus web infrastructure. Using machine learning, natural language processing, and artificial intelligence to create an interface that promotes exploration of all the groundbreaking work and research being done by the students and faculty. Moved our infrastructure to Google Cloud from our on premise, developed and associated a graphQL endpoint of our campus's data points ranging from courses, directory, and research papers. Using semantic analysis to categorize course description and research areas to allow users to narrow in on the wide range of complexity that CMU's CS school explores. Opened up the opportunity of working towards a dialogue system that seamlessly explores complex subjects while being fueled by real courses, research, faculty members, and academic papers that defined the technology the user was interested in. This project is still ongoing.",
     "external_link": "http://cs-dev.cmu.edu/",
     "project_link": "carnegie",
-    "github": "https://github.com/SchoolofComputerScience",
-    "projects": [
-      {
-        "code": true,
-        "project": "full stack / technical strategy",
-        "date": "6/1/15",
-        "client": "School of Computer Science",
-        "description": "Fixed several issues with the interface.",
-        "external_link": "",
-        "project_link": "",
-        "github": ""
-      },
-      {
-        "code": true,
-        "project": "full stack",
-        "date": "6/1/15",
-        "client": "Human-Computer Interaction Institute ",
-        "description": "Fixed several issues with the interface.",
-        "external_link": "https://www.hcii.cmu.edu/",
-        "project_link": "",
-        "github": ""
-      },
-      {
-        "code": true,
-        "project": "full stack",
-        "date": "6/1/15",
-        "client": "Language Technologies Institute",
-        "description": "Developed and constructed.",
-        "external_link": "https://www.lti.cs.cmu.edu/",
-        "project_link": "",
-        "github": ""
-      },
-      {
-        "code": true,
-        "project": "full stack",
-        "date": "6/1/15",
-        "client": "School of Computer Science",
-        "description": "Updated the website to modern design.",
-        "external_link": "https://cs.cmu.edu/",
-        "project_link": "",
-        "github": ""
-      }
-    ]
+    "github": "https://github.com/SchoolofComputerScience"     
   },
   {
     "design": "TRUE",

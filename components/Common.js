@@ -11,12 +11,21 @@ import {
   display,
   typography,
   position,
-  shadow
+  shadow,
+  textAlign,
+  borderRadius
 } from 'styled-system'
+import Image from 'next/image'
 
-export const Image = (props) => (
-  <Box as='img' {...props} />
-)
+export const ImageContainer = (props) => {
+  return(
+  <Image 
+    {...props} 
+    layout="responsive" 
+    placeholder='blur' 
+    blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPc+x8AAn8BvgA42gcAAAAASUVORK5CYII=' 
+  />
+)}
 
 export const Box = styled.div`
   ${space}
@@ -29,6 +38,8 @@ export const Box = styled.div`
   ${typography}
   ${position}
   ${shadow}
+  ${display}
+  ${borderRadius}
   `
   export const Header = styled.div`
   ${space}
@@ -62,6 +73,7 @@ export const Box = styled.div`
   ${display}
   ${typography}
   ${position}
+  ${display}
 `
 
 export const Text = styled.div`
@@ -70,4 +82,5 @@ export const Text = styled.div`
   ${color}
   ${fontWeight}
   ${border}
+  ${textAlign}
 `

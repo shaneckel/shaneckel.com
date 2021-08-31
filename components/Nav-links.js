@@ -1,18 +1,16 @@
-/** @jsx jsx */
 import { css, jsx } from '@emotion/react'
 import ActiveLink from './ActiveLink'
 import { Flex, Box, A } from './Common'
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 
 const links = [
-  // ['about', '/about' ],
   ['artwork', '/artwork' ],
-  // ['photo', '/photos' ],
   ['career', '/career' ],
   // ['writing', '/writing' ],
 ]
 
-export default ({ open, setOpen, ...props }) => {
+const NavLinks = ({ open, setOpen, ...props }) => {
   const navigationBox = useRef(null)
   const [navHeight, setNavHeight] = useState(500);
 
@@ -36,7 +34,7 @@ export default ({ open, setOpen, ...props }) => {
       zIndex='0'
       position={['fixed', 'inherit']}
       left='0'
-      bg={['red', 'inherit']}
+      bg={['background', 'inherit']}
       top={[open ? '0': `-${navHeight}px`, null]}
       css={css`
         transition: all 500ms ease;
@@ -81,14 +79,18 @@ export default ({ open, setOpen, ...props }) => {
         width={['100%', '25px']} 
         textAlign={['center', 'right']}
       >
-        <a href="https://webring.xxiivv.com/#random" target="_blank">
-          <img     
-            css={css`
-              width: 22px;
-              height: 22px;
-              padding-top: 6px;
-            `}      
-            src="https://webring.xxiivv.com/icon.white.svg" 
+        <a
+          href="https://webring.xxiivv.com/#random" target="_blank">
+          <Image
+            style={{
+              'min-width': '130px',            
+              'width': '22px',
+              'height': '22px',
+              'padding-top': '6px',
+            }}      
+            width='22'
+            height='22'
+            src="/images/xxiivv.svg" 
           />
         </a>
       </Box>
@@ -96,3 +98,5 @@ export default ({ open, setOpen, ...props }) => {
     </Flex>
   )
 }
+
+export default NavLinks 
